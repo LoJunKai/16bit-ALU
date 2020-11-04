@@ -1,0 +1,92 @@
+module auto_test_output (
+    input auto_input[16],  
+    input auto_ALUFN[6],
+    output auto_output
+    
+  ) {
+  
+  always {
+    auto_output = 0;
+    
+    case(auto_ALUFN){
+      6b000000:  //add
+        if(auto_input == 16hffff){
+          auto_output = 1;
+          // a is 16h0f0f
+          // b is 16hf0f0
+          }
+       6b000001:  // sub
+        if(auto_input == 16h0ff0){
+          auto_output = 1;
+          // a is 16hffff
+          // b is 16hf00f
+          }
+        6b011000: // AND
+        if(auto_input == 16h0ff0){
+          auto_output = 1;
+          // a is 16hfff0
+          // b is 16h0fff
+          }
+        6b011110: // OR
+        if(auto_input == 16hffff){
+          auto_output = 1;
+          // a is 16hf00f
+          // b is 16h0ff0
+          }
+        6b010110: // XOR
+        if(auto_input == 16hffff){
+          auto_output = 1;
+          // a is 16haaaa
+          // b is 16h5555
+          }
+        6b011010: // "A"(LDR)
+        if(auto_input == 16h0ff0){
+          auto_output = 1;
+          // a is 16h0ff0
+          // b is 16h0004
+          }
+        6b100000: // SHL
+        if(auto_input == 16hff00){
+          auto_output = 1;
+          // a is 16h00ff
+          // b is 16h0008
+          }
+        6b100001: // SHR
+        if(auto_input == 16h00ff){
+          auto_output = 1;
+          // a is 16hff00
+          // b is 16h0008
+          }
+        6b100011: // SRA
+        if(auto_input == 16h00ff){
+          auto_output = 1;
+          // a is 16h0ff0
+          // b is 16h0004
+          }
+        6b110011: // CMPEQ
+        if(auto_input == 16h0001){
+          auto_output = 1;
+          // a is 16h0ff0
+          // b is 16h0ff0
+          }
+        6b110101: // CMPLT
+        if(auto_input == 16h0001){
+          auto_output = 1;
+          // a is 16h0ff0
+          // b is 16h000f
+          }
+        6b110111: // CMPLE
+        if(auto_input == 16h0001){
+          auto_output = 1;
+          // a is 16h0ff0
+          // b is 16h000f
+          }
+        6b000010: // MUL
+        if(auto_input == 16h3fc0){
+          auto_output = 1;
+          // a is 16h0ff0
+          // b is 16h0004
+          }
+      }
+  }
+}

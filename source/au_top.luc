@@ -23,7 +23,7 @@ module au_top (
   }
   
   alucalc calculate;
-
+  auto_test_output auto_test;
   
   always {
     usb_tx = usb_rx;
@@ -37,6 +37,8 @@ module au_top (
     
     calculate.x = 16h00;
     calculate.io_dip = 3x{{8h00}};
+    auto_test.auto_input = 16h00;
+    auto_test.auto_ALUFN = 6h0;
     
     if (button_edge.out) {
       state.d = ~state.q;
@@ -47,7 +49,10 @@ module au_top (
       // Calculate mode
       calculate.x = storeX.q;
       calculate.io_dip = io_dip[2:0];
+      auto_test.auto_input = calculate.out;
+      auto_test.auto_ALUFN = io_dip[2][5:0];
       io_led[1:0] = $build(calculate.out, 2);
+      io_led[2][7] = auto_test.auto_output;
       
     } else {
       // Enter mode
