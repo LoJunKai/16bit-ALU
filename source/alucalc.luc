@@ -1,0 +1,17 @@
+module alucalc (
+    input x[16],
+    input io_dip [3][8], // [1:0] - y, [2] - alufn
+    output out [16]
+  ) {
+  
+  alu16 alu;
+  
+  always {
+  
+    alu.alufn = io_dip[2][5:0];
+    alu.x = x;
+    alu.y = c{io_dip[1], io_dip[0]};
+    
+    out = alu.o;
+  }
+}

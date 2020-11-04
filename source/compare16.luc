@@ -1,0 +1,19 @@
+module compare16 (
+  input alufn2,
+  input alufn1,
+  input z,
+  input v,
+  input n,
+  output cmp[16]
+) {
+  sig i1,i2,nvxor;
+
+  always {
+  i1 = alufn1 & z;
+  nvxor = n^v;
+  i2 = nvxor & alufn2;
+  cmp[0] = i1 | i2; 
+  cmp[15:1] = 15b0;
+    
+  }
+}

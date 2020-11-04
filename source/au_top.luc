@@ -1,0 +1,83 @@
+module au_top (
+    input clk,
+    input io_dip [3][8],
+    input io_button [5],
+    output io_led [3][8],
+    
+    // Not used
+    input rst_n,
+    output led [8],
+    input usb_rx,
+    output usb_tx,
+    output io_seg [8],
+    output io_sel [4]
+
+  ) {
+  
+  .clk(clk){
+    dff state(#INIT(0));
+    dff storeX[16];
+    button_conditioner button_cond;
+    edge_detector button_edge(#RISE(1), #FALL(0)); //detect on rising edge only
+
+  }
+  
+  alucalc calculate;
+
+  
+  always {
+    usb_tx = usb_rx;
+    io_seg = 8h00;
+    io_sel = 8hff;
+    io_sel = 4hf;
+    led = 8h00;
+    
+    button_cond.in = io_button[1];
+    button_edge.in = button_cond.out;
+    
+    calculate.x = 16h00;
+    calculate.io_dip = 3x{{8h00}};
+    
+    if (button_edge.out) {
+      state.d = ~state.q;
+    }
+    
+    
+    if (state.q){
+      // Calculate mode
+      calculate.x = storeX.q;
+      calculate.io_dip = io_dip[2:0];
+      io_led[1:0] = $build(calculate.out, 2);
+      
+    } else {
+      // Enter mode
+      storeX.d = $flatten(io_dip[1:0]);
+      io_led = 3x{{8hff}};
+    }    
+  }
+
+  
+  //pls do ur fancy io shit here thanks i dont understand how it works
+  
+  // Do up alufn and input_16bit modules - the params and input output
+  // This main module shall have the registers
+  // After button press output of input_16bit shall go to reg A[16:0]
+  // Output of input_16bit and alufn and reg A[16:0] shall now go into alu16
+  // Output of alu16 shall lightup the led arrays
+  // Press of button triggers write mode of reg A[16:0], and the machine starts from the top
+  
+  // how to store into reg a (try to use module input_16bit)
+  
+  // how to calculate (try to use module alucalc)
+  
+  // alu.x = reg[a]
+  // alu.y = io_dip[1:0]
+  // alu.alufn = io_dip[2]
+  
+  // io_led = $build(alu.o, 2)
+  
+  // How to reset and transit (try to use module transition/code the mainflow in here)
+ 
+
+}
+ 

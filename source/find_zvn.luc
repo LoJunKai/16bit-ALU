@@ -1,0 +1,26 @@
+module find_zvn (
+    input s[16],
+    input x15,
+    input y15,
+    output z,
+    output v,
+    output n
+  ) {
+  find_n findn;
+  find_z findz;
+  find_v findv;
+  
+
+  always {
+    findn.s15 = s[15]; //find n
+    n = findn.n;
+    
+    findv.x15 = x15; //find v
+    findv.y15 = y15;
+    findv.s15 = s[15];
+    v = findv.v;
+    
+    findz.s = s[15:0]; //find z 
+    z = findz.z;
+  }
+}
