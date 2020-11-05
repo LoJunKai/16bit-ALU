@@ -15,6 +15,7 @@ module au_top (
   
   sig rst; // Reset the Auto counter
   sig activateAuto; // Swtich for Auto or Manual mode
+  sig alufn[6]; // Store the alufn signals
   
   .clk(clk){
     dff state(#INIT(0)); // Denote if state is storing or evaluating
@@ -29,69 +30,70 @@ module au_top (
 
   }
   
-  alucalc calculate;
+  alucalc calculate;  // 16bit ALU module
+  alufn_checker alufn_validity;
   
   always {
+    // Unused
     usb_tx = usb_rx;
+    led = 8h00;
+    
+    // Set default start state
     io_seg = 8h00;
     io_sel = 4hf;
-    led = 8h00;
-
-    reset_cond.in = ~rst_n;
-    rst = reset_cond.out;
-    
-    button_cond.in = io_button[1];
-    button_edge.in = button_cond.out;
-    
     io_led = 3x{{8hff}};
+    
     calculate.x = 16h00;
     calculate.io_dip = 3x{{8h00}};
     activateAuto = io_dip[2][7];
+
+    // Setup conditioners
+    reset_cond.in = ~rst_n;
+    rst = reset_cond.out;
     
+    button_cond.in = io_button[1];  // Middle button being used
+    button_edge.in = button_cond.out;
+    
+    // Flip state when button pressed
     if (button_edge.out) {
       state.d = ~state.q;
     }
     
+    // Main action over here
     if (activateAuto) {
+      // Auto mode - go check out auto_tester module
       io_led = auto_test.io_dip;
       io_seg = auto_test.io_seg;
       io_sel = auto_test.io_sel;
+      alufn = auto_test.alufn;
       
     } else if (state.q){
-      // Calculate mode
+      // Calculate mode - go check out alucalc module
+      
+      // Put in x, y, alufn into ALU
       calculate.x = storeX.q;
       calculate.io_dip = io_dip[2:0];
-      io_led[1:0] = $build(calculate.out, 2);
+      
+      // Store alufn for validity checker
+      alufn = io_dip[2][5:0];
+      
+      // Output to led -> right 2 most shows 16bit output
+      io_led[1:0] = $build(calculate.out, 2); // $build changes 16bits to 2x 8bits arrays
       io_led[2] = 8h00;
+
       
     } else {
-      // Enter mode
-      storeX.d = $flatten(io_dip[1:0]);
-    }    
+      // Enter mode -> store inputs into dff
+      storeX.d = $flatten(io_dip[1:0]);  // $flatten changes 2x 8bits arrays into 16bits
+      alufn = 6b00;  // Placeholder so validity checker doesn't light up
+    }
+    
+    // Check for invalid ALUFN signals
+    alufn_validity.alufn = alufn;
+    
+    // When invalid, light up the 3rd led from the left
+    io_led[2][5] = alufn_validity.invalid;
+    
   }
-
-  
-  //pls do ur fancy io shit here thanks i dont understand how it works
-  
-  // Do up alufn and input_16bit modules - the params and input output
-  // This main module shall have the registers
-  // After button press output of input_16bit shall go to reg A[16:0]
-  // Output of input_16bit and alufn and reg A[16:0] shall now go into alu16
-  // Output of alu16 shall lightup the led arrays
-  // Press of button triggers write mode of reg A[16:0], and the machine starts from the top
-  
-  // how to store into reg a (try to use module input_16bit)
-  
-  // how to calculate (try to use module alucalc)
-  
-  // alu.x = reg[a]
-  // alu.y = io_dip[1:0]
-  // alu.alufn = io_dip[2]
-  
-  // io_led = $build(alu.o, 2)
-  
-  // How to reset and transit (try to use module transition/code the mainflow in here)
- 
-
 }
  

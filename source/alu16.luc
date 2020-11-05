@@ -3,57 +3,46 @@ module alu16 (
     input alufn[6],
     input x[16],
     input y[16],
-    output o[16]
-  ) {  
+    output o[16],
+    output z_out,
+    output v_out,
+    output n_out
+  ) {
   ytoystar ytoystar;
   sixteen_bit_adder sixteenbitadder;
-  multiplier16 multiplier;
-  find_zvn zvn; 
   compare16 compare;
   shift16 shift;
   boole16 boole;
-  sig sum[16]; // result of the adder as an intermediary connector
-  sig mul[16]; //result of multiplier
-  sig s[16]; //either the result of the adder or multiplier, depending on alufn[1], to be passed to the output
-  sig z,v,n; //z,v and n signals to be passed to the compare unit
+  find_zvn zvn;
+  sig s[16]; // result of the adder as an intermediary connector
   sig c[16]; //result of compare unit
   sig sh[16]; //result of shifter
   sig b[16]; // result of boolean unit
+  sig z,v,n; // result of z,v,n to be passed to the compare unit
   always {
     ytoystar.y = y[15:0]; //adder16 sum
     ytoystar.alufn0 = alufn[0];
     sixteenbitadder.x[15:0] = x[15:0];
     sixteenbitadder.y[15:0] = ytoystar.ystar[15:0];
     sixteenbitadder.cin = ytoystar.cin[0];
-    sum[15:0] = sixteenbitadder.s[15:0];
-    
-    multiplier.x = x; //multiplier
-    multiplier.y = y;
-    mul = multiplier.p;
-    
-    case (alufn[1]) { //chooses the result of the adder or multiplier, depending on alufn[1]
-      b0:
-        s = sum;
-      b1:
-        s = mul;
-      default:
-      s = sum;
-    }   
-    
-    
-    zvn.s[15:0] = s[15:0]; //adder16 find z,v,n
-    zvn.y15 = y[15];
+    s[15:0] = sixteenbitadder.s[15:0];
+
+    zvn.alufn0 = alufn[0];
     zvn.x15 = x[15];
+    zvn.y15 = y[15];
+    zvn.s = s;
     z = zvn.z;
     v = zvn.v;
     n = zvn.n;
+    
     
     compare.alufn1 = alufn[1];
     compare.alufn2 = alufn[2];
     compare.z = z;
     compare.v = v;
     compare.n = n;
-    c[15:0] = compare.cmp[15:0];
+    c[0] = compare.cmp0;
+    c[15:1] = 15b0;
     
     shift.x = x;
     shift.y = y[3:0];
@@ -75,7 +64,13 @@ module alu16 (
       b11:
         o = c;
       default:
-        o = s;
+        o = 16b0;
       
     }
-}
+    z_out = z;
+    n_out = n;
+    v_out = v;
+    if (alufn == 6b000010) {
+      o = x*y;}
+  }  }
+

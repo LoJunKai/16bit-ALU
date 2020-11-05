@@ -8,10 +8,10 @@ mux4 mux[16];//instantiate mux4s
   always {
     mux.s1[15:0] = y[15:0];
     mux.s0[15:0] = x[15:0];
-    mux.choice0[15:0] = alufn[0];
-    mux.choice1[15:0] = alufn[1];
-    mux.choice2[15:0] = alufn[2];
-    mux.choice3[15:0] = alufn[3];
+    mux.choice0[15:0] = 16x{alufn[0]};
+    mux.choice1[15:0] = 16x{alufn[1]};
+    mux.choice2[15:0] = 16x{alufn[2]};
+    mux.choice3[15:0] = 16x{alufn[3]};
     o[15:0] = mux.o[15:0];   
     
   }

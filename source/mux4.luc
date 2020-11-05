@@ -10,7 +10,7 @@ module mux4 (
   ) {
   always {
   
-    case ({s0,s1}) {
+    case (c{s0,s1}) {
       b00:
         o = choice0;        
       b10: 

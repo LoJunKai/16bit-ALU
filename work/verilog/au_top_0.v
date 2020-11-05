@@ -23,6 +23,8 @@ module au_top_0 (
   
   reg activateAuto;
   
+  reg [5:0] alufn;
+  
   reg M_state_d, M_state_q = 1'h0;
   reg [15:0] M_storeX_d, M_storeX_q = 1'h0;
   wire [1-1:0] M_button_cond_out;
@@ -49,21 +51,36 @@ module au_top_0 (
   wire [24-1:0] M_auto_test_io_dip;
   wire [8-1:0] M_auto_test_io_seg;
   wire [4-1:0] M_auto_test_io_sel;
+  wire [6-1:0] M_auto_test_alufn;
   auto_tester_4 auto_test (
     .clk(clk),
     .rst(rst),
     .io_dip(M_auto_test_io_dip),
     .io_seg(M_auto_test_io_seg),
-    .io_sel(M_auto_test_io_sel)
+    .io_sel(M_auto_test_io_sel),
+    .alufn(M_auto_test_alufn)
   );
   
   wire [16-1:0] M_calculate_out;
+  wire [1-1:0] M_calculate_z;
+  wire [1-1:0] M_calculate_n;
+  wire [1-1:0] M_calculate_v;
   reg [16-1:0] M_calculate_x;
   reg [24-1:0] M_calculate_io_dip;
   alucalc_5 calculate (
     .x(M_calculate_x),
     .io_dip(M_calculate_io_dip),
-    .out(M_calculate_out)
+    .out(M_calculate_out),
+    .z(M_calculate_z),
+    .n(M_calculate_n),
+    .v(M_calculate_v)
+  );
+  
+  wire [1-1:0] M_alufn_validity_invalid;
+  reg [6-1:0] M_alufn_validity_alufn;
+  alufn_checker_6 alufn_validity (
+    .alufn(M_alufn_validity_alufn),
+    .invalid(M_alufn_validity_invalid)
   );
   
   always @* begin
@@ -71,17 +88,17 @@ module au_top_0 (
     M_state_d = M_state_q;
     
     usb_tx = usb_rx;
+    led = 8'h00;
     io_seg = 8'h00;
     io_sel = 4'hf;
-    led = 8'h00;
-    M_reset_cond_in = ~rst_n;
-    rst = M_reset_cond_out;
-    M_button_cond_in = io_button[1+0-:1];
-    M_button_edge_in = M_button_cond_out;
     io_led = 24'hffffff;
     M_calculate_x = 16'h0000;
     M_calculate_io_dip = 24'h000000;
     activateAuto = io_dip[16+7+0-:1];
+    M_reset_cond_in = ~rst_n;
+    rst = M_reset_cond_out;
+    M_button_cond_in = io_button[1+0-:1];
+    M_button_edge_in = M_button_cond_out;
     if (M_button_edge_out) begin
       M_state_d = ~M_state_q;
     end
@@ -89,16 +106,21 @@ module au_top_0 (
       io_led = M_auto_test_io_dip;
       io_seg = M_auto_test_io_seg;
       io_sel = M_auto_test_io_sel;
+      alufn = M_auto_test_alufn;
     end else begin
       if (M_state_q) begin
         M_calculate_x = M_storeX_q;
         M_calculate_io_dip = io_dip[0+23-:24];
+        alufn = io_dip[16+0+5-:6];
         io_led[0+15-:16] = M_calculate_out;
         io_led[16+7-:8] = 8'h00;
       end else begin
         M_storeX_d = io_dip[0+15-:16];
+        alufn = 6'h00;
       end
     end
+    M_alufn_validity_alufn = alufn;
+    io_led[16+5+0-:1] = M_alufn_validity_invalid;
   end
   
   always @(posedge clk) begin

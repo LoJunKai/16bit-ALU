@@ -9,7 +9,8 @@ module auto_tester_4 (
     input rst,
     output reg [23:0] io_dip,
     output reg [7:0] io_seg,
-    output reg [3:0] io_sel
+    output reg [3:0] io_sel,
+    output reg [5:0] alufn
   );
   
   
@@ -21,7 +22,7 @@ module auto_tester_4 (
   reg pass_fail;
   
   wire [6-1:0] M_ctr_value;
-  counter_7 ctr (
+  counter_8 ctr (
     .clk(clk),
     .rst(rst),
     .value(M_ctr_value)
@@ -29,7 +30,7 @@ module auto_tester_4 (
   wire [7-1:0] M_seg_seg;
   wire [2-1:0] M_seg_sel;
   reg [8-1:0] M_seg_values;
-  multi_seven_seg_8 seg (
+  multi_seven_seg_9 seg (
     .clk(clk),
     .rst(rst),
     .values(M_seg_values),
@@ -41,18 +42,20 @@ module auto_tester_4 (
   wire [16-1:0] M_tester_auto_X;
   wire [16-1:0] M_tester_auto_Y;
   wire [16-1:0] M_tester_alu_ans;
+  wire [6-1:0] M_tester_alufn_pass;
   reg [4-1:0] M_tester_auto_case;
-  auto_test_output_9 tester (
+  auto_test_output_10 tester (
     .auto_case(M_tester_auto_case),
     .auto_pass_fail(M_tester_auto_pass_fail),
     .auto_X(M_tester_auto_X),
     .auto_Y(M_tester_auto_Y),
-    .alu_ans(M_tester_alu_ans)
+    .alu_ans(M_tester_alu_ans),
+    .alufn_pass(M_tester_alufn_pass)
   );
   
   wire [8-1:0] M_decimal_decimal;
   reg [4-1:0] M_decimal_binary;
-  decimal_counter_10 decimal (
+  decimal_counter_11 decimal (
     .binary(M_decimal_binary),
     .decimal(M_decimal_decimal)
   );
@@ -64,6 +67,7 @@ module auto_tester_4 (
     io_seg = ~M_seg_seg;
     io_sel = ~M_seg_sel;
     M_tester_auto_case = case_num;
+    alufn = M_tester_alufn_pass;
     if (M_ctr_value[1+0-:1]) begin
       led_bits = M_tester_alu_ans;
       pass_fail = M_tester_auto_pass_fail;
@@ -75,6 +79,6 @@ module auto_tester_4 (
         led_bits = M_tester_auto_X;
       end
     end
-    io_dip = {pass_fail, 7'h00, led_bits};
+    io_dip = {pass_fail, ~pass_fail, 6'h00, led_bits};
   end
 endmodule

@@ -4,19 +4,20 @@ module auto_tester (
 
     output io_dip[3][8],
     output io_seg[8],
-    output io_sel[4]
+    output io_sel[4],
+    output alufn[6]
     
   ) {
   
-  sig case_num[4];
-  sig led_bits[16];
-  sig pass_fail;
+  sig case_num[4]; // Stores test case number
+  sig led_bits[16]; // Output to see what's going on
+  sig pass_fail;  // Indicate if it is correct or not
   
   .clk(clk) {
     .rst(rst) {
       // ctr[5:2] -> cycle test cases, ctr[1] -> cycle input, output, ctr[0] -> if input, show X and Y
-      // 13 test cases -> max output is c(4b1100, 2b11) -> 6d51
-      counter ctr (#SIZE(6), #TOP(51), #DIV(27));
+      // 15 test cases -> max output is c(4b1110, 2b11) -> 6d59
+      counter ctr (#SIZE(6), #TOP(59), #DIV(27));
       
       // Show test cases number
       multi_seven_seg seg (#DIGITS(2));
@@ -27,22 +28,31 @@ module auto_tester (
   decimal_counter decimal;
   
   always {
+    // Extract out test case number
     case_num = ctr.value[5:2];
     
+    // Convert binary to decimal to pass into the 7 segs
     decimal.binary = case_num;
     seg.values = decimal.decimal;
-    io_seg = ~seg.seg;
+    io_seg = ~seg.seg; // Negated cause they are active low
     io_sel = ~seg.sel;
     
+    // Input case_num - go check out auto_test_output module
     tester.auto_case = case_num;
     
+    // Output alufn for validity checker
+    alufn = tester.alufn_pass;
+    
+    // Split time for each test case into 2 to display the inputs and output each
     if (ctr.value[1]) {
       // Output
       led_bits = tester.alu_ans;
       pass_fail = tester.auto_pass_fail;
     } else {
       // Input
-      pass_fail = 0;
+      pass_fail = 1b0; // Do not light up when showing inputs
+      
+      // Split time for inputs into 2 for x and y
       if (ctr.value[0]) {
         // Show y
         led_bits = tester.auto_Y;
@@ -52,8 +62,10 @@ module auto_tester (
       }
     }
     
+    // 1st led from the left -> pass
+    // 2nd led from the left -> fail
+    // 2 right arrays to show 16bits number
     io_dip = $build(c{pass_fail, ~pass_fail, 6h00, led_bits}, 3);
     
-
   }
 }

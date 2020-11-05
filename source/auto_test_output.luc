@@ -3,7 +3,8 @@ module auto_test_output (
     output auto_pass_fail, // 1bit pass/fail
     output auto_X[16],
     output auto_Y[16],
-    output alu_ans[16] // 16bit ans
+    output alu_ans[16], // 16bit ans
+    output alufn_pass[6]
   ) {
 
   sig alufn[6];
@@ -16,6 +17,7 @@ module auto_test_output (
   
   always {
 
+    // Test cases
     case(auto_case){
       0: //add
         alufn = 6b000000;
@@ -23,7 +25,7 @@ module auto_test_output (
         y = 16hf0f0;
         auto_ans = 16hffff;
 
-      1:  // sub
+      1: // sub
         alufn = 6b000001;
         x = 16hffff;
         y = 16hf00f;
@@ -94,23 +96,40 @@ module auto_test_output (
         x = 16h0ff0;
         y = 16h0004;
         auto_ans = 16h3fc0;
+        
+      13: // Invalid ADD
+        alufn = 6b000000;
+        x = 16h0f00;
+        y = 16hf0f0;
+        auto_ans = 16hffff;
+        
+      14: // Invalid AND
+        alufn = 6b011000;
+        x = 16hfff0;
+        y = 16h0fff;
+        auto_ans = 16hfff0;
 
       default:
-        // TODO: What other function to put when it is undefined case?
+        // Undefined case -> auto_pass_fail = fail;
         alufn = 6h00;
         x = 16h00;
         y = 16h00;
-        auto_ans = 16h00;
+        auto_ans = 16hff; // To force a fail case
     }
 
+    // Pass x, y and alufn into ALU
     calculate.x = x;
     calculate.io_dip = $build(c{2h0, alufn, y}, 3);
     
+    // Outputs
     alu_ans = calculate.out;
     auto_X = x;
     auto_Y = y;
-    
-    // auto_pass_fail = ~&(calculate.out ^ auto_ans);
+    alufn_pass = alufn; // For invalidy checker
+
+    // Compare ALU output and model ans
+    // not (output[16] ^ auto_ans) -> 0 only when they do not match
+    // & all the bits from above -> 1 only when they all are 1 (all match)
     nxor = ~(calculate.out ^ auto_ans);
     auto_pass_fail = &(nxor);
   }

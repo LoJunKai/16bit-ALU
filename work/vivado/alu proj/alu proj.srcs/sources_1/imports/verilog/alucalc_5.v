@@ -7,20 +7,29 @@
 module alucalc_5 (
     input [15:0] x,
     input [23:0] io_dip,
-    output reg [15:0] out
+    output reg [15:0] out,
+    output reg z,
+    output reg n,
+    output reg v
   );
   
   
   
   wire [16-1:0] M_alu_o;
+  wire [1-1:0] M_alu_z_out;
+  wire [1-1:0] M_alu_v_out;
+  wire [1-1:0] M_alu_n_out;
   reg [6-1:0] M_alu_alufn;
   reg [16-1:0] M_alu_x;
   reg [16-1:0] M_alu_y;
-  alu16_11 alu (
+  alu16_12 alu (
     .alufn(M_alu_alufn),
     .x(M_alu_x),
     .y(M_alu_y),
-    .o(M_alu_o)
+    .o(M_alu_o),
+    .z_out(M_alu_z_out),
+    .v_out(M_alu_v_out),
+    .n_out(M_alu_n_out)
   );
   
   always @* begin
@@ -28,5 +37,8 @@ module alucalc_5 (
     M_alu_x = x;
     M_alu_y = {io_dip[8+7-:8], io_dip[0+7-:8]};
     out = M_alu_o;
+    z = M_alu_z_out;
+    n = M_alu_n_out;
+    v = M_alu_v_out;
   end
 endmodule

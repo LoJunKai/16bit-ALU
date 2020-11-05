@@ -1,0 +1,88 @@
+module alutester (
+    
+    input alufn1,
+    input alufn2,
+    input z,
+    input v,
+    input n,
+    output o
+  ) {
+  /*ytoystar ytoystar;
+     sixteen_bit_adder sixteenbitadder;
+     multiplier16 multiplier;
+     find_zvn zvn;
+     
+     shift16 shift;
+     boole16 boole;
+     sig sum[16]; // result of the adder as an intermediary connector
+     sig mul[16]; //result of multiplier
+     sig s[16]; //either the result of the adder or multiplier, depending on alufn[1], to be passed to the output
+     sig c[16]; //result of compare unit
+     sig sh[16]; //result of shifter
+     sig b[16]; // result of boolean unit*/
+  compare16 compare;
+  sig c[16];
+  sig alufn[2];
+  always {
+    /*ytoystar.y = y[15:0]; //adder16 sum
+       ytoystar.alufn0 = alufn[0];
+       sixteenbitadder.x[15:0] = x[15:0];
+       sixteenbitadder.y[15:0] = ytoystar.ystar[15:0];
+       sixteenbitadder.cin = ytoystar.cin[0];
+       sum[15:0] = sixteenbitadder.s[15:0];
+       
+       multiplier.x = x; //multiplier
+       multiplier.y = y;
+       mul = multiplier.p;
+       
+       case (alufn[1]) { //chooses the result of the adder or multiplier, depending on alufn[1]
+       b0:
+       s = sum;
+       b1:
+       s = mul;
+       default:
+       s = sum;
+       }
+       
+       
+       zvn.s[15:0] = sum[15:0]; //adder16 find z,v,n
+       zvn.y15 = y[15];
+       zvn.x15 = x[15];*/
+    
+    
+    compare.alufn1 = alufn1;
+    compare.alufn2 = alufn2;
+    compare.z = z;
+    compare.v = v;
+    compare.n = n;
+    c[0] = compare.cmp0;
+    c[15:1] = 15b0;
+    
+    /*shift.x = x;
+       shift.y = y[3:0];
+       shift.alufn = alufn[1:0];
+       sh = shift.sh;
+       
+       boole.x = x;
+       boole.y = y;
+       boole.alufn = alufn[3:0];
+       b = boole.o;
+       
+       case (alufn[5:4]) {
+       b00:
+       o = s;
+       b01:
+       o = b;
+       b10:
+       o = sh;
+       b11:
+       o = c;
+       default:
+       o = 16b0;*/
+       alufn[1:0] = 2b11;
+    case (alufn[1:0]) {
+      b11: o = c[0];
+      default: o = 0;}
+    
+  }
+}

@@ -1,17 +1,31 @@
 module alucalc (
     input x[16],
     input io_dip [3][8], // [1:0] - y, [2] - alufn
-    output out [16]
+    output out [16],
+    
+    // For testing purposes
+    output z,
+    output n,
+    output v
   ) {
   
   alu16 alu;
   
   always {
   
+    // Extract out alufn [6] signals
     alu.alufn = io_dip[2][5:0];
-    alu.x = x;
-    alu.y = c{io_dip[1], io_dip[0]};
     
+    // input x and y
+    alu.x = x;
+    alu.y = c{io_dip[1], io_dip[0]}; // c concatenates the 2 8bits array, alternative would be $flatten
+    
+    // output
     out = alu.o;
+    
+    // For testing purposes
+    z = alu.z_out;
+    n = alu.n_out;
+    v = alu.v_out;
   }
 }
