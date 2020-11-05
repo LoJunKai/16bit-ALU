@@ -3,6 +3,9 @@
 
 ## Diagrams
 
+[ALU Overall Schematics](https://github.com/LoJunKai/16bit-ALU/raw/main/media/week%208%20FPGA%20schematics.pdf)
+
+
 #### Overall
 
 ![](https://github.com/LoJunKai/16bit-ALU/raw/main/media/overall.PNG)
