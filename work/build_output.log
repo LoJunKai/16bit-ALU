@@ -1,5 +1,3 @@
-Warnings in file C:\Users\JK\Desktop\Comp Struct\Alchitry Au\16bit ALU\source\au_top.luc:
-    Line 8, Column 4 : "rst_n" was never used
 Starting Vivado...
 
 ****** Vivado v2020.1 (64-bit)
@@ -15,7 +13,7 @@ source {C:\Users\JK\Desktop\Comp Struct\Alchitry Au\16bit ALU\work\project.tcl}
 # if {[file exists "$projDir/$projName"]} { file delete -force "$projDir/$projName" }
 # create_project $projName "$projDir/$projName" -part $device
 # set_property design_mode RTL [get_filesets sources_1]
-# set verilogSources [list "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/au_top_0.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/button_conditioner_1.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/edge_detector_2.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/alucalc_3.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/pipeline_4.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/alu16_5.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/ytoystar_6.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/sixteen_bit_adder_7.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/multiplier16_8.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/find_zvn_9.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/compare16_10.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/shift16_11.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/boole16_12.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/full_adder_13.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/multiply_single_layer_14.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/find_n_15.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/find_z_16.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/find_v_17.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/shiftleft16_18.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/shiftright16_19.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/mux4_20.v" ]
+# set verilogSources [list "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/au_top_0.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/button_conditioner_1.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/reset_conditioner_2.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/edge_detector_3.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/auto_tester_4.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/alucalc_5.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/pipeline_6.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/counter_7.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/multi_seven_seg_8.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/auto_test_output_9.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/decimal_counter_10.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/alu16_11.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/counter_12.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/seven_seg_13.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/decoder_14.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/ytoystar_15.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/sixteen_bit_adder_16.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/multiplier16_17.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/find_zvn_18.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/compare16_19.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/shift16_20.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/boole16_21.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/full_adder_22.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/multiply_single_layer_23.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/find_n_24.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/find_z_25.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/find_v_26.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/shiftleft16_27.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/shiftright16_28.v" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/verilog/mux4_29.v" ]
 # import_files -fileset [get_filesets sources_1] -force -norecurse $verilogSources
 # set xdcSources [list "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/constraint/io.xdc" "C:/Users/JK/Desktop/Comp\ Struct/Alchitry\ Au/16bit\ ALU/work/constraint/alchitry.xdc" "C:/Users/JK/Desktop/Computing/Alchitry/library/components/au.xdc" ]
 # read_xdc $xdcSources
@@ -23,10 +21,10 @@ source {C:\Users\JK\Desktop\Comp Struct\Alchitry Au\16bit ALU\work\project.tcl}
 # update_compile_order -fileset sources_1
 # launch_runs -runs synth_1 -jobs 8
 
-[Wed Nov  4 13:00:22 2020] Launched synth_1...
+[Thu Nov  5 19:41:45 2020] Launched synth_1...
 Run output will be captured here: C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.runs/synth_1/runme.log
 # wait_on_run synth_1
-[Wed Nov  4 13:00:22 2020] Waiting for synth_1 to finish...
+[Thu Nov  5 19:41:45 2020] Waiting for synth_1 to finish...
 
 *** Running vivado
     with args -log au_top_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source au_top_0.tcl
@@ -46,84 +44,117 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tftg256-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 18892
+INFO: [Synth 8-7075] Helper process launched with PID 9308
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1015.648 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'au_top_0' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/au_top_0.v:7]
 INFO: [Synth 8-6157] synthesizing module 'button_conditioner_1' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/button_conditioner_1.v:13]
 	Parameter CLK_FREQ bound to: 26'b10111110101111000010000000 
 	Parameter MIN_DELAY bound to: 5'b10100 
 	Parameter NUM_SYNC bound to: 2'b10 
-INFO: [Synth 8-6157] synthesizing module 'pipeline_4' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/pipeline_4.v:11]
+INFO: [Synth 8-6157] synthesizing module 'pipeline_6' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/pipeline_6.v:11]
 	Parameter DEPTH bound to: 2'b10 
-INFO: [Synth 8-6155] done synthesizing module 'pipeline_4' (1#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/pipeline_4.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'pipeline_6' (1#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/pipeline_6.v:11]
 INFO: [Synth 8-6155] done synthesizing module 'button_conditioner_1' (2#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/button_conditioner_1.v:13]
-INFO: [Synth 8-6157] synthesizing module 'edge_detector_2' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/edge_detector_2.v:12]
+INFO: [Synth 8-6157] synthesizing module 'reset_conditioner_2' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/reset_conditioner_2.v:11]
+	Parameter STAGES bound to: 3'b100 
+INFO: [Synth 8-6155] done synthesizing module 'reset_conditioner_2' (3#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/reset_conditioner_2.v:11]
+INFO: [Synth 8-6157] synthesizing module 'edge_detector_3' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/edge_detector_3.v:12]
 	Parameter RISE bound to: 1'b1 
 	Parameter FALL bound to: 1'b0 
-INFO: [Synth 8-6155] done synthesizing module 'edge_detector_2' (3#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/edge_detector_2.v:12]
-INFO: [Synth 8-6157] synthesizing module 'alucalc_3' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/alucalc_3.v:7]
-INFO: [Synth 8-6157] synthesizing module 'alu16_5' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/alu16_5.v:7]
-INFO: [Synth 8-6157] synthesizing module 'ytoystar_6' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/ytoystar_6.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'ytoystar_6' (4#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/ytoystar_6.v:7]
-INFO: [Synth 8-6157] synthesizing module 'sixteen_bit_adder_7' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/sixteen_bit_adder_7.v:7]
-INFO: [Synth 8-6157] synthesizing module 'full_adder_13' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/full_adder_13.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'full_adder_13' (5#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/full_adder_13.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'sixteen_bit_adder_7' (6#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/sixteen_bit_adder_7.v:7]
-INFO: [Synth 8-6157] synthesizing module 'multiplier16_8' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/multiplier16_8.v:7]
-INFO: [Synth 8-6157] synthesizing module 'multiply_single_layer_14' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/multiply_single_layer_14.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'multiply_single_layer_14' (7#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/multiply_single_layer_14.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'multiplier16_8' (8#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/multiplier16_8.v:7]
-INFO: [Synth 8-6157] synthesizing module 'find_zvn_9' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/find_zvn_9.v:7]
-INFO: [Synth 8-6157] synthesizing module 'find_n_15' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/find_n_15.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'find_n_15' (9#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/find_n_15.v:7]
-INFO: [Synth 8-6157] synthesizing module 'find_z_16' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/find_z_16.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'find_z_16' (10#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/find_z_16.v:7]
-INFO: [Synth 8-6157] synthesizing module 'find_v_17' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/find_v_17.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'find_v_17' (11#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/find_v_17.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'find_zvn_9' (12#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/find_zvn_9.v:7]
-INFO: [Synth 8-6157] synthesizing module 'compare16_10' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/compare16_10.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'compare16_10' (13#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/compare16_10.v:7]
-INFO: [Synth 8-6157] synthesizing module 'shift16_11' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shift16_11.v:7]
-INFO: [Synth 8-6157] synthesizing module 'shiftleft16_18' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftleft16_18.v:7]
-INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftleft16_18.v:21]
-INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftleft16_18.v:34]
-INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftleft16_18.v:47]
-INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftleft16_18.v:60]
-INFO: [Synth 8-6155] done synthesizing module 'shiftleft16_18' (14#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftleft16_18.v:7]
-INFO: [Synth 8-6157] synthesizing module 'shiftright16_19' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftright16_19.v:7]
-INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftright16_19.v:24]
-INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftright16_19.v:36]
-INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftright16_19.v:49]
-INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftright16_19.v:62]
-INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftright16_19.v:75]
-INFO: [Synth 8-6155] done synthesizing module 'shiftright16_19' (15#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftright16_19.v:7]
-INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shift16_11.v:43]
-INFO: [Synth 8-6155] done synthesizing module 'shift16_11' (16#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shift16_11.v:7]
-INFO: [Synth 8-6157] synthesizing module 'boole16_12' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/boole16_12.v:7]
-INFO: [Synth 8-6157] synthesizing module 'mux4_20' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/mux4_20.v:7]
-INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/mux4_20.v:21]
-INFO: [Synth 8-6155] done synthesizing module 'mux4_20' (17#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/mux4_20.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'boole16_12' (18#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/boole16_12.v:7]
-INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/alu16_5.v:128]
-INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/alu16_5.v:160]
-INFO: [Synth 8-6155] done synthesizing module 'alu16_5' (19#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/alu16_5.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'alucalc_3' (20#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/alucalc_3.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'au_top_0' (21#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/au_top_0.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'edge_detector_3' (4#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/edge_detector_3.v:12]
+INFO: [Synth 8-6157] synthesizing module 'auto_tester_4' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/auto_tester_4.v:7]
+INFO: [Synth 8-6157] synthesizing module 'counter_7' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/counter_7.v:14]
+	Parameter SIZE bound to: 3'b110 
+	Parameter DIV bound to: 5'b11011 
+	Parameter TOP bound to: 6'b110011 
+	Parameter UP bound to: 1'b1 
+	Parameter MAX_VALUE bound to: 33'b110011111111111111111111111111111 
+INFO: [Synth 8-6155] done synthesizing module 'counter_7' (5#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/counter_7.v:14]
+INFO: [Synth 8-6157] synthesizing module 'multi_seven_seg_8' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/multi_seven_seg_8.v:12]
+	Parameter DIGITS bound to: 2'b10 
+	Parameter DIV bound to: 5'b10000 
+	Parameter DIGIT_BITS bound to: 1'b1 
+INFO: [Synth 8-6157] synthesizing module 'counter_12' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/counter_12.v:14]
+	Parameter SIZE bound to: 1'b1 
+	Parameter DIV bound to: 5'b10000 
+	Parameter TOP bound to: 3'b001 
+	Parameter UP bound to: 1'b1 
+	Parameter MAX_VALUE bound to: 19'b0011111111111111111 
+INFO: [Synth 8-6155] done synthesizing module 'counter_12' (6#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/counter_12.v:14]
+INFO: [Synth 8-6157] synthesizing module 'seven_seg_13' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/seven_seg_13.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'seven_seg_13' (7#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/seven_seg_13.v:7]
+INFO: [Synth 8-6157] synthesizing module 'decoder_14' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/decoder_14.v:11]
+	Parameter WIDTH bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'decoder_14' (8#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/decoder_14.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'multi_seven_seg_8' (9#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/multi_seven_seg_8.v:12]
+INFO: [Synth 8-6157] synthesizing module 'auto_test_output_9' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/auto_test_output_9.v:7]
+INFO: [Synth 8-6157] synthesizing module 'alucalc_5' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/alucalc_5.v:7]
+INFO: [Synth 8-6157] synthesizing module 'alu16_11' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/alu16_11.v:7]
+INFO: [Synth 8-6157] synthesizing module 'ytoystar_15' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/ytoystar_15.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'ytoystar_15' (10#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/ytoystar_15.v:7]
+INFO: [Synth 8-6157] synthesizing module 'sixteen_bit_adder_16' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/sixteen_bit_adder_16.v:7]
+INFO: [Synth 8-6157] synthesizing module 'full_adder_22' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/full_adder_22.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'full_adder_22' (11#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/full_adder_22.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'sixteen_bit_adder_16' (12#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/sixteen_bit_adder_16.v:7]
+INFO: [Synth 8-6157] synthesizing module 'multiplier16_17' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/multiplier16_17.v:7]
+INFO: [Synth 8-6157] synthesizing module 'multiply_single_layer_23' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/multiply_single_layer_23.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'multiply_single_layer_23' (13#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/multiply_single_layer_23.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'multiplier16_17' (14#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/multiplier16_17.v:7]
+INFO: [Synth 8-6157] synthesizing module 'find_zvn_18' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/find_zvn_18.v:7]
+INFO: [Synth 8-6157] synthesizing module 'find_n_24' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/find_n_24.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'find_n_24' (15#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/find_n_24.v:7]
+INFO: [Synth 8-6157] synthesizing module 'find_z_25' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/find_z_25.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'find_z_25' (16#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/find_z_25.v:7]
+INFO: [Synth 8-6157] synthesizing module 'find_v_26' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/find_v_26.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'find_v_26' (17#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/find_v_26.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'find_zvn_18' (18#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/find_zvn_18.v:7]
+INFO: [Synth 8-6157] synthesizing module 'compare16_19' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/compare16_19.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'compare16_19' (19#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/compare16_19.v:7]
+INFO: [Synth 8-6157] synthesizing module 'shift16_20' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shift16_20.v:7]
+INFO: [Synth 8-6157] synthesizing module 'shiftleft16_27' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftleft16_27.v:7]
+INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftleft16_27.v:21]
+INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftleft16_27.v:34]
+INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftleft16_27.v:47]
+INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftleft16_27.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'shiftleft16_27' (20#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftleft16_27.v:7]
+INFO: [Synth 8-6157] synthesizing module 'shiftright16_28' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftright16_28.v:7]
+INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftright16_28.v:24]
+INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftright16_28.v:36]
+INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftright16_28.v:49]
+INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftright16_28.v:62]
+INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftright16_28.v:75]
+INFO: [Synth 8-6155] done synthesizing module 'shiftright16_28' (21#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shiftright16_28.v:7]
+INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shift16_20.v:43]
+INFO: [Synth 8-6155] done synthesizing module 'shift16_20' (22#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/shift16_20.v:7]
+INFO: [Synth 8-6157] synthesizing module 'boole16_21' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/boole16_21.v:7]
+INFO: [Synth 8-6157] synthesizing module 'mux4_29' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/mux4_29.v:7]
+INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/mux4_29.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'mux4_29' (23#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/mux4_29.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'boole16_21' (24#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/boole16_21.v:7]
+INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/alu16_11.v:128]
+INFO: [Synth 8-226] default block is never used [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/alu16_11.v:160]
+INFO: [Synth 8-6155] done synthesizing module 'alu16_11' (25#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/alu16_11.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'alucalc_5' (26#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/alucalc_5.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'auto_test_output_9' (27#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/auto_test_output_9.v:7]
+INFO: [Synth 8-6157] synthesizing module 'decimal_counter_10' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/decimal_counter_10.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'decimal_counter_10' (28#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/decimal_counter_10.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'auto_tester_4' (29#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/auto_tester_4.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'au_top_0' (30#1) [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/au_top_0.v:7]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1015.648 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1015.648 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1015.648 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.076 . Memory (MB): peak = 1015.648 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -140,49 +171,60 @@ Parsing XDC File [C:/Users/JK/Desktop/Computing/Alchitry/library/components/au.x
 Finished Parsing XDC File [C:/Users/JK/Desktop/Computing/Alchitry/library/components/au.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1015.648 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 1015.648 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1015.648 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tftg256-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1015.648 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1015.648 ; gain = 0.000
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'io_led_reg' [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.srcs/sources_1/imports/verilog/au_top_0.v:67]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1015.648 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   33 Bit       Adders := 1     
+	   2 Input   17 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 1     
 +---XORs : 
-	   2 Input     16 Bit         XORs := 1     
-	   3 Input      1 Bit         XORs := 272   
-	   2 Input      1 Bit         XORs := 1     
+	   2 Input     16 Bit         XORs := 3     
+	   3 Input      1 Bit         XORs := 544   
+	   2 Input      1 Bit         XORs := 2     
 +---Registers : 
+	               33 Bit    Registers := 1     
+	               17 Bit    Registers := 1     
 	               16 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input   24 Bit        Muxes := 3     
-	   2 Input   16 Bit        Muxes := 11    
-	   4 Input   16 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 1     
-	   4 Input    1 Bit        Muxes := 16    
+	   2 Input   33 Bit        Muxes := 1     
+	   2 Input   24 Bit        Muxes := 4     
+	   2 Input   17 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 24    
+	   4 Input   16 Bit        Muxes := 2     
+	  14 Input   16 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 2     
+	   4 Input    1 Bit        Muxes := 32    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -199,25 +241,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1015.648 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:00:52 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 1015.648 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:00:52 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Finished Timing Optimization : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 1036.734 ; gain = 21.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:49 ; elapsed = 00:00:53 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Finished Technology Mapping : Time (s): cpu = 00:00:59 ; elapsed = 00:01:00 . Memory (MB): peak = 1037.746 ; gain = 22.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -235,37 +277,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:56 ; elapsed = 00:01:00 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Finished IO Insertion : Time (s): cpu = 00:01:06 ; elapsed = 00:01:08 . Memory (MB): peak = 1037.746 ; gain = 22.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:56 ; elapsed = 00:01:00 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:06 ; elapsed = 00:01:08 . Memory (MB): peak = 1037.746 ; gain = 22.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:56 ; elapsed = 00:01:00 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:06 ; elapsed = 00:01:08 . Memory (MB): peak = 1037.746 ; gain = 22.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:56 ; elapsed = 00:01:00 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:06 ; elapsed = 00:01:08 . Memory (MB): peak = 1037.746 ; gain = 22.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:56 ; elapsed = 00:01:00 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:06 ; elapsed = 00:01:08 . Memory (MB): peak = 1037.746 ; gain = 22.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:56 ; elapsed = 00:01:00 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:06 ; elapsed = 00:01:08 . Memory (MB): peak = 1037.746 ; gain = 22.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -282,48 +324,49 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |     5|
-|3     |LUT1   |     3|
-|4     |LUT2   |    24|
-|5     |LUT3   |    18|
-|6     |LUT4   |    42|
-|7     |LUT5   |    45|
-|8     |LUT6   |   107|
-|9     |MUXF7  |     4|
-|10    |FDRE   |    40|
-|11    |IBUF   |    25|
-|12    |OBUF   |    45|
+|2     |CARRY4 |    17|
+|3     |LUT1   |     6|
+|4     |LUT2   |    52|
+|5     |LUT3   |    35|
+|6     |LUT4   |    44|
+|7     |LUT5   |    60|
+|8     |LUT6   |   187|
+|9     |MUXF7  |     1|
+|10    |FDRE   |    90|
+|11    |FDSE   |     4|
+|12    |IBUF   |    27|
+|13    |OBUF   |    45|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:56 ; elapsed = 00:01:00 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:06 ; elapsed = 00:01:08 . Memory (MB): peak = 1037.746 ; gain = 22.098
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:39 ; elapsed = 00:00:55 . Memory (MB): peak = 1005.523 ; gain = 0.000
-Synthesis Optimization Complete : Time (s): cpu = 00:00:56 ; elapsed = 00:01:00 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:50 ; elapsed = 00:01:03 . Memory (MB): peak = 1037.746 ; gain = 22.098
+Synthesis Optimization Complete : Time (s): cpu = 00:01:07 ; elapsed = 00:01:08 . Memory (MB): peak = 1037.746 ; gain = 22.098
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1005.523 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1049.637 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 18 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1005.523 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1049.637 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-71 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+89 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:07 ; elapsed = 00:01:26 . Memory (MB): peak = 1005.523 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:17 ; elapsed = 00:01:21 . Memory (MB): peak = 1049.637 ; gain = 33.988
 INFO: [Common 17-1381] The checkpoint 'C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.runs/synth_1/au_top_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file au_top_0_utilization_synth.rpt -pb au_top_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Nov  4 13:01:59 2020...
-[Wed Nov  4 13:02:03 2020] synth_1 finished
-wait_on_run: Time (s): cpu = 00:00:00 ; elapsed = 00:01:41 . Memory (MB): peak = 1001.020 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 19:43:17 2020...
+[Thu Nov  5 19:43:21 2020] synth_1 finished
+wait_on_run: Time (s): cpu = 00:00:01 ; elapsed = 00:01:36 . Memory (MB): peak = 1013.805 ; gain = 0.000
 # launch_runs impl_1 -to_step write_bitstream -jobs 8
-[Wed Nov  4 13:02:03 2020] Launched impl_1...
+[Thu Nov  5 19:43:21 2020] Launched impl_1...
 Run output will be captured here: C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.runs/impl_1/runme.log
 # wait_on_run impl_1
-[Wed Nov  4 13:02:03 2020] Waiting for impl_1 to finish...
+[Thu Nov  5 19:43:21 2020] Waiting for impl_1 to finish...
 
 
 *** Running vivado
@@ -341,8 +384,8 @@ Command: link_design -top au_top_0 -part xc7a35tftg256-1
 Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
 INFO: [Device 21-403] Loading part xc7a35tftg256-1
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1006.039 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1012.898 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 18 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2020.1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -353,13 +396,13 @@ Finished Parsing XDC File [C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU
 Parsing XDC File [C:/Users/JK/Desktop/Computing/Alchitry/library/components/au.xdc]
 Finished Parsing XDC File [C:/Users/JK/Desktop/Computing/Alchitry/library/components/au.xdc]
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1006.039 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1012.898 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 7 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1006.039 ; gain = 0.000
+link_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1012.898 ; gain = 0.000
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
@@ -370,54 +413,54 @@ INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 1006.039 ; gain = 0.000
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1012.898 ; gain = 0.000
 
 Starting Cache Timing Information Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Ending Cache Timing Information Task | Checksum: 221ef4c0
+Ending Cache Timing Information Task | Checksum: 1888fbab9
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1243.883 ; gain = 237.844
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1244.270 ; gain = 231.371
 
 Starting Logic Optimization Task
 
 Phase 1 Retarget
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 1 Retarget | Checksum: 221ef4c0
+Phase 1 Retarget | Checksum: 1888fbab9
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.080 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 1437.453 ; gain = 0.000
 INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
 
 Phase 2 Constant propagation
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Phase 2 Constant propagation | Checksum: 221ef4c0
+Phase 2 Constant propagation | Checksum: 1888fbab9
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.091 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.073 . Memory (MB): peak = 1437.453 ; gain = 0.000
 INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
 
 Phase 3 Sweep
-Phase 3 Sweep | Checksum: 10acfce52
+Phase 3 Sweep | Checksum: 1d8cc3e03
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.113 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.091 . Memory (MB): peak = 1437.453 ; gain = 0.000
 INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
 
 Phase 4 BUFG optimization
-Phase 4 BUFG optimization | Checksum: 10acfce52
+Phase 4 BUFG optimization | Checksum: 1d8cc3e03
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.137 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.113 . Memory (MB): peak = 1437.453 ; gain = 0.000
 INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
 
 Phase 5 Shift Register Optimization
 INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
-Phase 5 Shift Register Optimization | Checksum: 10acfce52
+Phase 5 Shift Register Optimization | Checksum: 1d8cc3e03
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.147 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.125 . Memory (MB): peak = 1437.453 ; gain = 0.000
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 6 Post Processing Netlist
-Phase 6 Post Processing Netlist | Checksum: 10acfce52
+Phase 6 Post Processing Netlist | Checksum: 1d8cc3e03
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.154 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.130 . Memory (MB): peak = 1437.453 ; gain = 0.000
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
 Opt_design Change Summary
 =========================
@@ -438,37 +481,37 @@ Opt_design Change Summary
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1445.160 ; gain = 0.000
-Ending Logic Optimization Task | Checksum: ede6d861
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1437.453 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: c4006057
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.168 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.150 . Memory (MB): peak = 1437.453 ; gain = 0.000
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
-Ending Power Optimization Task | Checksum: ede6d861
+Ending Power Optimization Task | Checksum: c4006057
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1437.453 ; gain = 0.000
 
 Starting Final Cleanup Task
-Ending Final Cleanup Task | Checksum: ede6d861
+Ending Final Cleanup Task | Checksum: c4006057
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1437.453 ; gain = 0.000
 
 Starting Netlist Obfuscation Task
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1445.160 ; gain = 0.000
-Ending Netlist Obfuscation Task | Checksum: ede6d861
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1437.453 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: c4006057
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1437.453 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
 24 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:24 . Memory (MB): peak = 1445.160 ; gain = 439.121
+opt_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:23 . Memory (MB): peak = 1437.453 ; gain = 424.555
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.079 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.088 . Memory (MB): peak = 1437.453 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.runs/impl_1/au_top_0_opt.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_drc -file au_top_0_drc_opted.rpt -pb au_top_0_drc_opted.pb -rpx au_top_0_drc_opted.rpx
 Command: report_drc -file au_top_0_drc_opted.rpt -pb au_top_0_drc_opted.pb -rpx au_top_0_drc_opted.rpx
@@ -478,7 +521,6 @@ INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/dat
 INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.runs/impl_1/au_top_0_drc_opted.rpt.
 report_drc completed successfully
-report_drc: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1445.160 ; gain = 0.000
 Command: place_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
@@ -496,44 +538,44 @@ INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1445.160 ; gain = 0.000
-Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 13960a1d
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1437.453 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: b96bfb36
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 1445.160 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1437.453 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1437.453 ; gain = 0.000
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 42efa809
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 19cf82992
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1437.453 ; gain = 0.000
 
 Phase 1.3 Build Placer Netlist Model
-Phase 1.3 Build Placer Netlist Model | Checksum: 4f26f16f
+Phase 1.3 Build Placer Netlist Model | Checksum: 2439b32a0
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1437.453 ; gain = 0.000
 
 Phase 1.4 Constrain Clocks/Macros
-Phase 1.4 Constrain Clocks/Macros | Checksum: 4f26f16f
+Phase 1.4 Constrain Clocks/Macros | Checksum: 2439b32a0
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1445.160 ; gain = 0.000
-Phase 1 Placer Initialization | Checksum: 4f26f16f
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1437.453 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 2439b32a0
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1437.453 ; gain = 0.000
 
 Phase 2 Global Placement
 
 Phase 2.1 Floorplanning
-Phase 2.1 Floorplanning | Checksum: def02359
+Phase 2.1 Floorplanning | Checksum: 2982b0296
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1437.453 ; gain = 0.000
 
 Phase 2.2 Global Placement Core
 
 Phase 2.2.1 Physical Synthesis In Placer
-INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 7 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 25 LUT instances to create LUTNM shape
 INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
-INFO: [Physopt 32-775] End 1 Pass. Optimized 3 nets or cells. Created 0 new cell, deleted 3 existing cells and moved 0 existing cell
+INFO: [Physopt 32-775] End 1 Pass. Optimized 4 nets or cells. Created 0 new cell, deleted 4 existing cells and moved 0 existing cell
 INFO: [Physopt 32-65] No nets found for high-fanout optimization.
 INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
@@ -544,7 +586,7 @@ INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was
 INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
 INFO: [Physopt 32-949] No candidate nets found for HD net replication
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1437.453 ; gain = 0.000
 
 Summary of Physical Synthesis Optimizations
 ============================================
@@ -553,7 +595,7 @@ Summary of Physical Synthesis Optimizations
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 |  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
-|  LUT Combining                                    |            0  |              3  |                     3  |           0  |           1  |  00:00:00  |
+|  LUT Combining                                    |            0  |              4  |                     4  |           0  |           1  |  00:00:00  |
 |  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  DSP Register                                     |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
 |  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
@@ -561,59 +603,59 @@ Summary of Physical Synthesis Optimizations
 |  BRAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
 |  URAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
 |  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  Total                                            |            0  |              3  |                     3  |           0  |           3  |  00:00:00  |
+|  Total                                            |            0  |              4  |                     4  |           0  |           3  |  00:00:00  |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Phase 2.2.1 Physical Synthesis In Placer | Checksum: 170ea15ab
+Phase 2.2.1 Physical Synthesis In Placer | Checksum: 2211cb40a
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 1445.160 ; gain = 0.000
-Phase 2.2 Global Placement Core | Checksum: 11a8d5559
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1437.453 ; gain = 0.000
+Phase 2.2 Global Placement Core | Checksum: 1fb1eefba
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 1445.160 ; gain = 0.000
-Phase 2 Global Placement | Checksum: 11a8d5559
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1437.453 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 1fb1eefba
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1437.453 ; gain = 0.000
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 141cd08df
+Phase 3.1 Commit Multi Column Macros | Checksum: 2459336d1
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1437.453 ; gain = 0.000
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: d1cf6ac9
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 2475c103b
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1437.453 ; gain = 0.000
 
 Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: 157b06446
+Phase 3.3 Area Swap Optimization | Checksum: 1d6f1b17e
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 1437.453 ; gain = 0.000
 
 Phase 3.4 Pipeline Register Optimization
-Phase 3.4 Pipeline Register Optimization | Checksum: 1c5196994
+Phase 3.4 Pipeline Register Optimization | Checksum: 1cabf9fbe
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 1437.453 ; gain = 0.000
 
 Phase 3.5 Small Shape Detail Placement
-Phase 3.5 Small Shape Detail Placement | Checksum: 1409d06a2
+Phase 3.5 Small Shape Detail Placement | Checksum: 26209b27e
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 1437.453 ; gain = 0.000
 
 Phase 3.6 Re-assign LUT pins
-Phase 3.6 Re-assign LUT pins | Checksum: 6edb7ba9
+Phase 3.6 Re-assign LUT pins | Checksum: 20f431cd4
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 1437.453 ; gain = 0.000
 
 Phase 3.7 Pipeline Register Optimization
-Phase 3.7 Pipeline Register Optimization | Checksum: c142a45b
+Phase 3.7 Pipeline Register Optimization | Checksum: 271511561
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1445.160 ; gain = 0.000
-Phase 3 Detail Placement | Checksum: c142a45b
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 1437.453 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 271511561
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1445.160 ; gain = 0.000
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 1437.453 ; gain = 0.000
 
 Phase 4 Post Placement Optimization and Clean-Up
 
@@ -621,7 +663,7 @@ Phase 4.1 Post Commit Optimization
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Phase 4.1.1 Post Placement Optimization
-Post Placement Optimization Initialization | Checksum: da22ed45
+Post Placement Optimization Initialization | Checksum: 241fd4312
 
 Phase 4.1.1.1 BUFG Insertion
 
@@ -629,62 +671,62 @@ Starting Physical Synthesis Task
 
 Phase 1 Physical Synthesis Initialization
 INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=5.580 | TNS=0.000 |
-Phase 1 Physical Synthesis Initialization | Checksum: 19f5d24eb
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=5.722 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1ace9d1f9
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 1451.930 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 1447.582 ; gain = 0.000
 INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
-Ending Physical Synthesis Task | Checksum: 1024ec890
+Ending Physical Synthesis Task | Checksum: 1a9b5e7de
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 1451.930 ; gain = 0.000
-Phase 4.1.1.1 BUFG Insertion | Checksum: da22ed45
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1447.582 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 241fd4312
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1451.930 ; gain = 6.770
-INFO: [Place 30-746] Post Placement Timing Summary WNS=5.580. For the most accurate timing information please run report_timing.
-Phase 4.1.1 Post Placement Optimization | Checksum: 100f2e990
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1447.582 ; gain = 10.129
+INFO: [Place 30-746] Post Placement Timing Summary WNS=5.722. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 276e84fe1
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1451.930 ; gain = 6.770
-Phase 4.1 Post Commit Optimization | Checksum: 100f2e990
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1447.582 ; gain = 10.129
+Phase 4.1 Post Commit Optimization | Checksum: 276e84fe1
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1451.930 ; gain = 6.770
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1447.582 ; gain = 10.129
 
 Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: 100f2e990
+Phase 4.2 Post Placement Cleanup | Checksum: 276e84fe1
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1451.930 ; gain = 6.770
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1447.582 ; gain = 10.129
 
 Phase 4.3 Placer Reporting
-Phase 4.3 Placer Reporting | Checksum: 100f2e990
+Phase 4.3 Placer Reporting | Checksum: 276e84fe1
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1451.930 ; gain = 6.770
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1447.582 ; gain = 10.129
 
 Phase 4.4 Final Placement Cleanup
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1451.930 ; gain = 0.000
-Phase 4.4 Final Placement Cleanup | Checksum: 1d9d703e4
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1447.582 ; gain = 0.000
+Phase 4.4 Final Placement Cleanup | Checksum: 1c964af05
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1451.930 ; gain = 6.770
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1d9d703e4
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1447.582 ; gain = 10.129
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1c964af05
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1451.930 ; gain = 6.770
-Ending Placer Task | Checksum: 100e214a0
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1447.582 ; gain = 10.129
+Ending Placer Task | Checksum: f19de1e1
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1451.930 ; gain = 6.770
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1447.582 ; gain = 10.129
 INFO: [Common 17-83] Releasing license: Implementation
 60 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
-place_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 1451.930 ; gain = 6.770
+place_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 1447.582 ; gain = 10.129
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.126 . Memory (MB): peak = 1451.934 ; gain = 0.004
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.176 . Memory (MB): peak = 1447.621 ; gain = 0.039
 INFO: [Common 17-1381] The checkpoint 'C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.runs/impl_1/au_top_0_placed.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_io -file au_top_0_io_placed.rpt
-report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.187 . Memory (MB): peak = 1451.934 ; gain = 0.000
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.130 . Memory (MB): peak = 1447.621 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file au_top_0_utilization_placed.rpt -pb au_top_0_utilization_placed.pb
 INFO: [runtcl-4] Executing : report_control_sets -verbose -file au_top_0_control_sets_placed.rpt
-report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1451.934 ; gain = 0.000
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1447.621 ; gain = 0.000
 Command: phys_opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
@@ -698,7 +740,7 @@ Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.142 . Memory (MB): peak = 1484.250 ; gain = 17.875
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.193 . Memory (MB): peak = 1479.938 ; gain = 17.871
 INFO: [Common 17-1381] The checkpoint 'C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.runs/impl_1/au_top_0_physopt.dcp' has been generated.
 Command: route_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
@@ -711,41 +753,41 @@ INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more in
 
 Starting Routing Task
 INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
-Checksum: PlaceDB: 1516969e ConstDB: 0 ShapeSum: ebcb7e02 RouteDB: 0
+Checksum: PlaceDB: 9fa7d63a ConstDB: 0 ShapeSum: 51f60ba7 RouteDB: 0
 
 Phase 1 Build RT Design
-Phase 1 Build RT Design | Checksum: cd388a3f
+Phase 1 Build RT Design | Checksum: 9c3123cc
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:32 . Memory (MB): peak = 1574.555 ; gain = 78.359
-Post Restoration Checksum: NetGraph: 36fdd6fb NumContArr: 963ab344 Constraints: 0 Timing: 0
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1579.176 ; gain = 88.184
+Post Restoration Checksum: NetGraph: 1f2e8b2c NumContArr: 7d0298a0 Constraints: 0 Timing: 0
 
 Phase 2 Router Initialization
 
 Phase 2.1 Create Timer
-Phase 2.1 Create Timer | Checksum: cd388a3f
+Phase 2.1 Create Timer | Checksum: 9c3123cc
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:32 . Memory (MB): peak = 1574.555 ; gain = 78.359
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1579.176 ; gain = 88.184
 
 Phase 2.2 Fix Topology Constraints
-Phase 2.2 Fix Topology Constraints | Checksum: cd388a3f
+Phase 2.2 Fix Topology Constraints | Checksum: 9c3123cc
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:32 . Memory (MB): peak = 1580.539 ; gain = 84.344
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1585.148 ; gain = 94.156
 
 Phase 2.3 Pre Route Cleanup
-Phase 2.3 Pre Route Cleanup | Checksum: cd388a3f
+Phase 2.3 Pre Route Cleanup | Checksum: 9c3123cc
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:32 . Memory (MB): peak = 1580.539 ; gain = 84.344
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1585.148 ; gain = 94.156
  Number of Nodes with overlaps = 0
 
 Phase 2.4 Update Timing
-Phase 2.4 Update Timing | Checksum: 113bc6490
+Phase 2.4 Update Timing | Checksum: f308caca
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:33 . Memory (MB): peak = 1584.746 ; gain = 88.551
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.577  | TNS=0.000  | WHS=-0.053 | THS=-0.162 |
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:34 . Memory (MB): peak = 1589.289 ; gain = 98.297
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.719  | TNS=0.000  | WHS=-0.052 | THS=-0.167 |
 
-Phase 2 Router Initialization | Checksum: 120d3785e
+Phase 2 Router Initialization | Checksum: 1551210cf
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:33 . Memory (MB): peak = 1584.746 ; gain = 88.551
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:34 . Memory (MB): peak = 1589.289 ; gain = 98.297
 
 Router Utilization Summary
   Global Vertical Routing Utilization    = 0 %
@@ -753,76 +795,76 @@ Router Utilization Summary
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
-  Number of Failed Nets               = 301
+  Number of Failed Nets               = 513
     (Failed Nets is the sum of unrouted and partially routed nets)
-  Number of Unrouted Nets             = 301
+  Number of Unrouted Nets             = 513
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
 
 Phase 3 Initial Routing
-Phase 3 Initial Routing | Checksum: 1deb6223c
+Phase 3 Initial Routing | Checksum: e793ddaf
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1585.680 ; gain = 89.484
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:34 . Memory (MB): peak = 1590.574 ; gain = 99.582
 
 Phase 4 Rip-up And Reroute
 
 Phase 4.1 Global Iteration 0
- Number of Nodes with overlaps = 39
+ Number of Nodes with overlaps = 80
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.239  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.321  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 4.1 Global Iteration 0 | Checksum: 7ead6a0d
+Phase 4.1 Global Iteration 0 | Checksum: 1a6536b4a
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1585.684 ; gain = 89.488
-Phase 4 Rip-up And Reroute | Checksum: 7ead6a0d
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:34 . Memory (MB): peak = 1590.574 ; gain = 99.582
+Phase 4 Rip-up And Reroute | Checksum: 1a6536b4a
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1585.684 ; gain = 89.488
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:34 . Memory (MB): peak = 1590.574 ; gain = 99.582
 
 Phase 5 Delay and Skew Optimization
 
 Phase 5.1 Delay CleanUp
 
 Phase 5.1.1 Update Timing
-Phase 5.1.1 Update Timing | Checksum: 9ada2f1f
+Phase 5.1.1 Update Timing | Checksum: 17fbaacf8
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1585.684 ; gain = 89.488
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.333  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:34 . Memory (MB): peak = 1590.574 ; gain = 99.582
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.412  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 5.1 Delay CleanUp | Checksum: 9ada2f1f
+Phase 5.1 Delay CleanUp | Checksum: 17fbaacf8
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1585.684 ; gain = 89.488
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:34 . Memory (MB): peak = 1590.574 ; gain = 99.582
 
 Phase 5.2 Clock Skew Optimization
-Phase 5.2 Clock Skew Optimization | Checksum: 9ada2f1f
+Phase 5.2 Clock Skew Optimization | Checksum: 17fbaacf8
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1585.684 ; gain = 89.488
-Phase 5 Delay and Skew Optimization | Checksum: 9ada2f1f
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:34 . Memory (MB): peak = 1590.574 ; gain = 99.582
+Phase 5 Delay and Skew Optimization | Checksum: 17fbaacf8
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1585.684 ; gain = 89.488
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:34 . Memory (MB): peak = 1590.574 ; gain = 99.582
 
 Phase 6 Post Hold Fix
 
 Phase 6.1 Hold Fix Iter
 
 Phase 6.1.1 Update Timing
-Phase 6.1.1 Update Timing | Checksum: 10b7e4b68
+Phase 6.1.1 Update Timing | Checksum: 12027c534
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1585.684 ; gain = 89.488
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.333  | TNS=0.000  | WHS=0.231  | THS=0.000  |
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:34 . Memory (MB): peak = 1590.574 ; gain = 99.582
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.412  | TNS=0.000  | WHS=0.252  | THS=0.000  |
 
-Phase 6.1 Hold Fix Iter | Checksum: ad2653eb
+Phase 6.1 Hold Fix Iter | Checksum: 1edb8527c
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1585.684 ; gain = 89.488
-Phase 6 Post Hold Fix | Checksum: ad2653eb
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:34 . Memory (MB): peak = 1590.574 ; gain = 99.582
+Phase 6 Post Hold Fix | Checksum: 1edb8527c
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1585.684 ; gain = 89.488
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:34 . Memory (MB): peak = 1590.574 ; gain = 99.582
 
 Phase 7 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 0.114486 %
-  Global Horizontal Routing Utilization  = 0.0868037 %
+  Global Vertical Routing Utilization    = 0.170852 %
+  Global Horizontal Routing Utilization  = 0.178423 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -832,44 +874,44 @@ Router Utilization Summary
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
-Phase 7 Route finalize | Checksum: 44ac4851
+Phase 7 Route finalize | Checksum: 1cf5f65fa
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1585.684 ; gain = 89.488
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:35 . Memory (MB): peak = 1590.574 ; gain = 99.582
 
 Phase 8 Verifying routed nets
 
  Verification completed successfully
-Phase 8 Verifying routed nets | Checksum: 44ac4851
+Phase 8 Verifying routed nets | Checksum: 1cf5f65fa
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1587.691 ; gain = 91.496
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:35 . Memory (MB): peak = 1592.582 ; gain = 101.590
 
 Phase 9 Depositing Routes
-Phase 9 Depositing Routes | Checksum: 8da648bd
+Phase 9 Depositing Routes | Checksum: 276d48387
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:34 . Memory (MB): peak = 1587.691 ; gain = 91.496
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:35 . Memory (MB): peak = 1592.582 ; gain = 101.590
 
 Phase 10 Post Router Timing
-INFO: [Route 35-57] Estimated Timing Summary | WNS=5.333  | TNS=0.000  | WHS=0.231  | THS=0.000  |
+INFO: [Route 35-57] Estimated Timing Summary | WNS=4.412  | TNS=0.000  | WHS=0.252  | THS=0.000  |
 
 INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
-Phase 10 Post Router Timing | Checksum: 8da648bd
+Phase 10 Post Router Timing | Checksum: 276d48387
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:34 . Memory (MB): peak = 1587.691 ; gain = 91.496
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:35 . Memory (MB): peak = 1592.582 ; gain = 101.590
 INFO: [Route 35-16] Router Completed Successfully
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:34 . Memory (MB): peak = 1587.691 ; gain = 91.496
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:35 . Memory (MB): peak = 1592.582 ; gain = 101.590
 
 Routing Is Done.
 INFO: [Common 17-83] Releasing license: Implementation
 84 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:36 . Memory (MB): peak = 1587.691 ; gain = 103.441
+route_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:36 . Memory (MB): peak = 1592.582 ; gain = 112.645
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.122 . Memory (MB): peak = 1597.578 ; gain = 9.887
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.166 . Memory (MB): peak = 1602.469 ; gain = 9.887
 INFO: [Common 17-1381] The checkpoint 'C:/Users/JK/Desktop/Comp Struct/Alchitry Au/16bit ALU/work/vivado/alu proj/alu proj.runs/impl_1/au_top_0_routed.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_drc -file au_top_0_drc_routed.rpt -pb au_top_0_drc_routed.pb -rpx au_top_0_drc_routed.rpx
 Command: report_drc -file au_top_0_drc_routed.rpt -pb au_top_0_drc_routed.pb -rpx au_top_0_drc_routed.rpx
@@ -916,7 +958,7 @@ Loading route data...
 Processing options...
 Creating bitmap...
 Creating bitstream...
-Bitstream compression saved 14953344 bits.
+Bitstream compression saved 14482624 bits.
 Writing bitstream ./au_top_0.bit...
 Writing bitstream ./au_top_0.bin...
 INFO: [Vivado 12-1842] Bitgen Completed Successfully.
@@ -924,10 +966,10 @@ INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK 
 INFO: [Common 17-83] Releasing license: Implementation
 115 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:21 ; elapsed = 00:00:36 . Memory (MB): peak = 2034.660 ; gain = 401.254
-INFO: [Common 17-206] Exiting Vivado at Wed Nov  4 13:04:30 2020...
-[Wed Nov  4 13:04:35 2020] impl_1 finished
-wait_on_run: Time (s): cpu = 00:00:01 ; elapsed = 00:02:32 . Memory (MB): peak = 1001.020 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed Nov  4 13:04:35 2020...
+write_bitstream: Time (s): cpu = 00:00:23 ; elapsed = 00:00:36 . Memory (MB): peak = 2034.801 ; gain = 396.875
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 19:45:47 2020...
+[Thu Nov  5 19:45:53 2020] impl_1 finished
+wait_on_run: Time (s): cpu = 00:00:00 ; elapsed = 00:02:32 . Memory (MB): peak = 1013.805 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 19:45:53 2020...
 
 Finished building project.

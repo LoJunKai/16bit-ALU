@@ -1,0 +1,59 @@
+module auto_tester (
+    input clk,  // clock
+    input rst,  // reset
+
+    output io_dip[3][8],
+    output io_seg[8],
+    output io_sel[4]
+    
+  ) {
+  
+  sig case_num[4];
+  sig led_bits[16];
+  sig pass_fail;
+  
+  .clk(clk) {
+    .rst(rst) {
+      // ctr[5:2] -> cycle test cases, ctr[1] -> cycle input, output, ctr[0] -> if input, show X and Y
+      // 13 test cases -> max output is c(4b1100, 2b11) -> 6d51
+      counter ctr (#SIZE(6), #TOP(51), #DIV(27));
+      
+      // Show test cases number
+      multi_seven_seg seg (#DIGITS(2));
+    }
+  }
+  
+  auto_test_output tester;
+  decimal_counter decimal;
+  
+  always {
+    case_num = ctr.value[5:2];
+    
+    decimal.binary = case_num;
+    seg.values = decimal.decimal;
+    io_seg = ~seg.seg;
+    io_sel = ~seg.sel;
+    
+    tester.auto_case = case_num;
+    
+    if (ctr.value[1]) {
+      // Output
+      led_bits = tester.alu_ans;
+      pass_fail = tester.auto_pass_fail;
+    } else {
+      // Input
+      pass_fail = 0;
+      if (ctr.value[0]) {
+        // Show y
+        led_bits = tester.auto_Y;
+      } else {
+        // Show x
+        led_bits = tester.auto_X;
+      }
+    }
+    
+    io_dip = $build(c{pass_fail, ~pass_fail, 6h00, led_bits}, 3);
+    
+
+  }
+}

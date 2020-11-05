@@ -1,28 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="alu proj" board="Alchitry Au" language="Lucid" version="3">
   <files>
-    <src>shiftleft16.luc</src>
-    <src>find_z.luc</src>
-    <src>ytoystar.luc</src>
+    <src>decimal_counter.luc</src>
     <src>mux4.luc</src>
     <src top="true">au_top.luc</src>
-    <component>reset_conditioner.luc</component>
     <src>find_n.luc</src>
     <component>button_conditioner.luc</component>
     <src>sixteen_bit_adder.luc</src>
+    <src>auto_test_output.luc</src>
+    <src>full_adder.luc</src>
+    <src>shift16.luc</src>
+    <src>boole16.luc</src>
+    <src>shiftright16.luc</src>
+    <component>edge_detector.luc</component>
+    <component>pipeline.luc</component>
+    <src>shiftleft16.luc</src>
+    <src>find_z.luc</src>
+    <src>ytoystar.luc</src>
+    <component>reset_conditioner.luc</component>
+    <src>multi_seven_seg.luc</src>
+    <component>decoder.luc</component>
     <src>multiply_single_layer.luc</src>
     <src>find_zvn.luc</src>
     <component>counter.luc</component>
     <src>find_v.luc</src>
-    <src>full_adder.luc</src>
     <src>alucalc.luc</src>
-    <src>shift16.luc</src>
-    <src>boole16.luc</src>
     <src>compare16.luc</src>
-    <src>shiftright16.luc</src>
     <src>alu16.luc</src>
-    <component>edge_detector.luc</component>
-    <component>pipeline.luc</component>
+    <src>seven_seg.luc</src>
+    <src>auto_tester.luc</src>
     <src>multiplier16.luc</src>
     <constraint lib="true">io.acf</constraint>
     <constraint lib="true">alchitry.acf</constraint>

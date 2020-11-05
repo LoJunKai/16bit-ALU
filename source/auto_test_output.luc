@@ -1,92 +1,118 @@
 module auto_test_output (
-    input auto_input[16],  
-    input auto_ALUFN[6],
-    output auto_output
-    
+    input auto_case[4],
+    output auto_pass_fail, // 1bit pass/fail
+    output auto_X[16],
+    output auto_Y[16],
+    output alu_ans[16] // 16bit ans
   ) {
+
+  sig alufn[6];
+  sig x[16];
+  sig y[16];
+  sig nxor[16];
+  sig auto_ans[16];
+
+  alucalc calculate;
   
   always {
-    auto_output = 0;
+
+    case(auto_case){
+      0: //add
+        alufn = 6b000000;
+        x = 16h0f0f;
+        y = 16hf0f0;
+        auto_ans = 16hffff;
+
+      1:  // sub
+        alufn = 6b000001;
+        x = 16hffff;
+        y = 16hf00f;
+        auto_ans = 16h0ff0;
+       
+      2: // AND
+        alufn = 6b011000;
+        x = 16hfff0;
+        y = 16h0fff;
+        auto_ans = 16h0ff0;
+       
+      3: // OR
+        alufn = 6b011110;
+        x = 16hf0f0;
+        y = 16hff00;
+        auto_ans = 16hfff0;
+       
+      4: // XOR
+        alufn = 6b010110;
+        x = 16haaaa;
+        y = 16h5555;
+        auto_ans = 16hffff;
+       
+      5: // "A"(LDR)
+        alufn = 6b011010;
+        x = 16h0ff0;
+        y = 16h0004;
+        auto_ans = 16h0ff0;
+       
+      6: // SHL
+        alufn = 6b100000;
+        x = 16h00ff;
+        y = 16h0004;
+        auto_ans = 16h0ff0;
+       
+      7: // SHR
+        alufn = 6b100001;
+        x = 16hff00;
+        y = 16h0004;
+        auto_ans = 16h0ff0;
+       
+      8: // SRA
+        alufn = 6b100011;
+        x = 16hff00;
+        y = 16h0004;
+        auto_ans = 16hfff0;
+       
+      9: // CMPEQ
+        alufn = 6b110011;
+        x = 16h0ff0;
+        y = 16h0ff0;
+        auto_ans = 16h0001;
+       
+      10: // CMPLT
+        alufn = 6b110101;
+        x = 16h0ff0;
+        y = 16h000f;
+        auto_ans = 16h0001;
+       
+      11: // CMPLE
+        alufn = 6b110111;
+        x = 16h0ff0;
+        y = 16h000f;
+        auto_ans = 16h0001;
+       
+      12: // MUL
+        alufn = 6b000010;
+        x = 16h0ff0;
+        y = 16h0004;
+        auto_ans = 16h3fc0;
+
+      default:
+        // TODO: What other function to put when it is undefined case?
+        alufn = 6h00;
+        x = 16h00;
+        y = 16h00;
+        auto_ans = 16h00;
+    }
+
+    calculate.x = x;
+    calculate.io_dip = $build(c{2h0, alufn, y}, 3);
     
-    case(auto_ALUFN){
-      6b000000:  //add
-        if(auto_input == 16hffff){
-          auto_output = 1;
-          // a is 16h0f0f
-          // b is 16hf0f0
-          }
-       6b000001:  // sub
-        if(auto_input == 16h0ff0){
-          auto_output = 1;
-          // a is 16hffff
-          // b is 16hf00f
-          }
-        6b011000: // AND
-        if(auto_input == 16h0ff0){
-          auto_output = 1;
-          // a is 16hfff0
-          // b is 16h0fff
-          }
-        6b011110: // OR
-        if(auto_input == 16hffff){
-          auto_output = 1;
-          // a is 16hf00f
-          // b is 16h0ff0
-          }
-        6b010110: // XOR
-        if(auto_input == 16hffff){
-          auto_output = 1;
-          // a is 16haaaa
-          // b is 16h5555
-          }
-        6b011010: // "A"(LDR)
-        if(auto_input == 16h0ff0){
-          auto_output = 1;
-          // a is 16h0ff0
-          // b is 16h0004
-          }
-        6b100000: // SHL
-        if(auto_input == 16hff00){
-          auto_output = 1;
-          // a is 16h00ff
-          // b is 16h0008
-          }
-        6b100001: // SHR
-        if(auto_input == 16h00ff){
-          auto_output = 1;
-          // a is 16hff00
-          // b is 16h0008
-          }
-        6b100011: // SRA
-        if(auto_input == 16h00ff){
-          auto_output = 1;
-          // a is 16h0ff0
-          // b is 16h0004
-          }
-        6b110011: // CMPEQ
-        if(auto_input == 16h0001){
-          auto_output = 1;
-          // a is 16h0ff0
-          // b is 16h0ff0
-          }
-        6b110101: // CMPLT
-        if(auto_input == 16h0001){
-          auto_output = 1;
-          // a is 16h0ff0
-          // b is 16h000f
-          }
-        6b110111: // CMPLE
-        if(auto_input == 16h0001){
-          auto_output = 1;
-          // a is 16h0ff0
-          // b is 16h000f
-          }
-        6b000010: // MUL
-        if(auto_input == 16h3fc0){
-          auto_output = 1;
-          // a is 16h0ff0
-          // b is 16h0004
-          }
-      }
+    alu_ans = calculate.out;
+    auto_X = x;
+    auto_Y = y;
+    
+    // auto_pass_fail = ~&(calculate.out ^ auto_ans);
+    nxor = ~(calculate.out ^ auto_ans);
+    auto_pass_fail = &(nxor);
   }
 }
+

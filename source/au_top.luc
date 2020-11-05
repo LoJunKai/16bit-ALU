@@ -1,63 +1,72 @@
 module au_top (
     input clk,
+    input rst_n,
     input io_dip [3][8],
     input io_button [5],
     output io_led [3][8],
+    output io_seg [8],
+    output io_sel [4],
     
     // Not used
-    input rst_n,
     output led [8],
     input usb_rx,
-    output usb_tx,
-    output io_seg [8],
-    output io_sel [4]
-
+    output usb_tx
   ) {
   
+  sig rst; // Reset the Auto counter
+  sig activateAuto; // Swtich for Auto or Manual mode
+  
   .clk(clk){
-    dff state(#INIT(0));
+    dff state(#INIT(0)); // Denote if state is storing or evaluating
     dff storeX[16];
     button_conditioner button_cond;
+    reset_conditioner reset_cond;
     edge_detector button_edge(#RISE(1), #FALL(0)); //detect on rising edge only
+    
+    .rst(rst){
+      auto_tester auto_test;
+    }
 
   }
   
   alucalc calculate;
-  auto_test_output auto_test;
   
   always {
     usb_tx = usb_rx;
     io_seg = 8h00;
-    io_sel = 8hff;
     io_sel = 4hf;
     led = 8h00;
+
+    reset_cond.in = ~rst_n;
+    rst = reset_cond.out;
     
     button_cond.in = io_button[1];
     button_edge.in = button_cond.out;
     
+    io_led = 3x{{8hff}};
     calculate.x = 16h00;
     calculate.io_dip = 3x{{8h00}};
-    auto_test.auto_input = 16h00;
-    auto_test.auto_ALUFN = 6h0;
+    activateAuto = io_dip[2][7];
     
     if (button_edge.out) {
       state.d = ~state.q;
     }
     
-    
-    if (state.q){
+    if (activateAuto) {
+      io_led = auto_test.io_dip;
+      io_seg = auto_test.io_seg;
+      io_sel = auto_test.io_sel;
+      
+    } else if (state.q){
       // Calculate mode
       calculate.x = storeX.q;
       calculate.io_dip = io_dip[2:0];
-      auto_test.auto_input = calculate.out;
-      auto_test.auto_ALUFN = io_dip[2][5:0];
       io_led[1:0] = $build(calculate.out, 2);
-      io_led[2][7] = auto_test.auto_output;
+      io_led[2] = 8h00;
       
     } else {
       // Enter mode
       storeX.d = $flatten(io_dip[1:0]);
-      io_led = 3x{{8hff}};
     }    
   }
 

@@ -6,18 +6,22 @@
 
 module au_top_0 (
     input clk,
+    input rst_n,
     input [23:0] io_dip,
     input [4:0] io_button,
     output reg [23:0] io_led,
-    input rst_n,
+    output reg [7:0] io_seg,
+    output reg [3:0] io_sel,
     output reg [7:0] led,
     input usb_rx,
-    output reg usb_tx,
-    output reg [7:0] io_seg,
-    output reg [3:0] io_sel
+    output reg usb_tx
   );
   
   
+  
+  reg rst;
+  
+  reg activateAuto;
   
   reg M_state_d, M_state_q = 1'h0;
   reg [15:0] M_storeX_d, M_storeX_q = 1'h0;
@@ -28,18 +32,35 @@ module au_top_0 (
     .in(M_button_cond_in),
     .out(M_button_cond_out)
   );
+  wire [1-1:0] M_reset_cond_out;
+  reg [1-1:0] M_reset_cond_in;
+  reset_conditioner_2 reset_cond (
+    .clk(clk),
+    .in(M_reset_cond_in),
+    .out(M_reset_cond_out)
+  );
   wire [1-1:0] M_button_edge_out;
   reg [1-1:0] M_button_edge_in;
-  edge_detector_2 button_edge (
+  edge_detector_3 button_edge (
     .clk(clk),
     .in(M_button_edge_in),
     .out(M_button_edge_out)
+  );
+  wire [24-1:0] M_auto_test_io_dip;
+  wire [8-1:0] M_auto_test_io_seg;
+  wire [4-1:0] M_auto_test_io_sel;
+  auto_tester_4 auto_test (
+    .clk(clk),
+    .rst(rst),
+    .io_dip(M_auto_test_io_dip),
+    .io_seg(M_auto_test_io_seg),
+    .io_sel(M_auto_test_io_sel)
   );
   
   wire [16-1:0] M_calculate_out;
   reg [16-1:0] M_calculate_x;
   reg [24-1:0] M_calculate_io_dip;
-  alucalc_3 calculate (
+  alucalc_5 calculate (
     .x(M_calculate_x),
     .io_dip(M_calculate_io_dip),
     .out(M_calculate_out)
@@ -51,23 +72,32 @@ module au_top_0 (
     
     usb_tx = usb_rx;
     io_seg = 8'h00;
-    io_sel = 8'hff;
     io_sel = 4'hf;
     led = 8'h00;
+    M_reset_cond_in = ~rst_n;
+    rst = M_reset_cond_out;
     M_button_cond_in = io_button[1+0-:1];
     M_button_edge_in = M_button_cond_out;
+    io_led = 24'hffffff;
     M_calculate_x = 16'h0000;
     M_calculate_io_dip = 24'h000000;
+    activateAuto = io_dip[16+7+0-:1];
     if (M_button_edge_out) begin
       M_state_d = ~M_state_q;
     end
-    if (M_state_q) begin
-      M_calculate_x = M_storeX_q;
-      M_calculate_io_dip = io_dip[0+23-:24];
-      io_led[0+15-:16] = M_calculate_out;
+    if (activateAuto) begin
+      io_led = M_auto_test_io_dip;
+      io_seg = M_auto_test_io_seg;
+      io_sel = M_auto_test_io_sel;
     end else begin
-      M_storeX_d = io_dip[0+15-:16];
-      io_led = 24'h000000;
+      if (M_state_q) begin
+        M_calculate_x = M_storeX_q;
+        M_calculate_io_dip = io_dip[0+23-:24];
+        io_led[0+15-:16] = M_calculate_out;
+        io_led[16+7-:8] = 8'h00;
+      end else begin
+        M_storeX_d = io_dip[0+15-:16];
+      end
     end
   end
   
