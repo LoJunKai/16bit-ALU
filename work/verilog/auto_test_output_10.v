@@ -10,7 +10,10 @@ module auto_test_output_10 (
     output reg [15:0] auto_X,
     output reg [15:0] auto_Y,
     output reg [15:0] alu_ans,
-    output reg [5:0] alufn_pass
+    output reg [5:0] alufn_pass,
+    output reg z,
+    output reg v,
+    output reg n
   );
   
   
@@ -105,14 +108,14 @@ module auto_test_output_10 (
       end
       4'ha: begin
         alufn = 6'h35;
-        x = 16'h0ff0;
-        y = 16'h000f;
+        x = 16'h000f;
+        y = 16'h0ff0;
         auto_ans = 16'h0001;
       end
       4'hb: begin
         alufn = 6'h37;
-        x = 16'h0ff0;
-        y = 16'h000f;
+        x = 16'h000f;
+        y = 16'h0ff0;
         auto_ans = 16'h0001;
       end
       4'hc: begin
@@ -133,6 +136,12 @@ module auto_test_output_10 (
         y = 16'h0fff;
         auto_ans = 16'hfff0;
       end
+      4'hf: begin
+        alufn = 6'h3f;
+        x = 16'hfff0;
+        y = 16'h0fff;
+        auto_ans = 16'h0ff0;
+      end
       default: begin
         alufn = 6'h00;
         x = 16'h0000;
@@ -143,6 +152,9 @@ module auto_test_output_10 (
     M_calculate_x = x;
     M_calculate_io_dip = {2'h0, alufn, y};
     alu_ans = M_calculate_out;
+    z = M_calculate_z;
+    v = M_calculate_v;
+    n = M_calculate_n;
     auto_X = x;
     auto_Y = y;
     alufn_pass = alufn;

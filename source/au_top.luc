@@ -80,17 +80,21 @@ module au_top (
       // Output to led -> right 2 most shows 16bit output
       io_led[1:0] = $build(calculate.out, 2); // $build changes 16bits to 2x 8bits arrays
       io_led[2] = 8h00;
-
+      
+      // z, v, n
+      io_led[2][0] = calculate.z;
+      io_led[2][1] = calculate.v;
+      io_led[2][2] = calculate.n;
       
     } else {
       // Enter mode -> store inputs into dff
       storeX.d = $flatten(io_dip[1:0]);  // $flatten changes 2x 8bits arrays into 16bits
-      alufn = 6b00;  // Placeholder so validity checker doesn't light up
+      alufn = 6h11; // Invalid alufn since starting state -> led lights up
     }
     
     // Check for invalid ALUFN signals
     alufn_validity.alufn = alufn;
-    
+  
     // When invalid, light up the 3rd led from the left
     io_led[2][5] = alufn_validity.invalid;
     

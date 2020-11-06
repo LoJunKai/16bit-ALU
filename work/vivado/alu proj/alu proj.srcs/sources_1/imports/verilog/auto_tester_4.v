@@ -43,6 +43,9 @@ module auto_tester_4 (
   wire [16-1:0] M_tester_auto_Y;
   wire [16-1:0] M_tester_alu_ans;
   wire [6-1:0] M_tester_alufn_pass;
+  wire [1-1:0] M_tester_z;
+  wire [1-1:0] M_tester_v;
+  wire [1-1:0] M_tester_n;
   reg [4-1:0] M_tester_auto_case;
   auto_test_output_10 tester (
     .auto_case(M_tester_auto_case),
@@ -50,7 +53,10 @@ module auto_tester_4 (
     .auto_X(M_tester_auto_X),
     .auto_Y(M_tester_auto_Y),
     .alu_ans(M_tester_alu_ans),
-    .alufn_pass(M_tester_alufn_pass)
+    .alufn_pass(M_tester_alufn_pass),
+    .z(M_tester_z),
+    .v(M_tester_v),
+    .n(M_tester_n)
   );
   
   wire [8-1:0] M_decimal_decimal;
@@ -71,14 +77,14 @@ module auto_tester_4 (
     if (M_ctr_value[1+0-:1]) begin
       led_bits = M_tester_alu_ans;
       pass_fail = M_tester_auto_pass_fail;
+      io_dip = {pass_fail, ~pass_fail, 3'h0, M_tester_n, M_tester_v, M_tester_z, led_bits};
     end else begin
-      pass_fail = 1'h0;
       if (M_ctr_value[0+0-:1]) begin
         led_bits = M_tester_auto_Y;
       end else begin
         led_bits = M_tester_auto_X;
       end
+      io_dip = {8'h00, led_bits};
     end
-    io_dip = {pass_fail, ~pass_fail, 6'h00, led_bits};
   end
 endmodule

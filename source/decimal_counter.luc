@@ -10,6 +10,6 @@ module decimal_counter (
       decimal[1] = 4h0;
     } else {
       // above 9, split into first and second digit
-      decimal[0] = binary - 4h9;
+      decimal[0] = binary - 4hA;
       decimal[1] = 4h1;
 }

@@ -16,7 +16,7 @@ module decimal_counter_11 (
       decimal[0+3-:4] = binary;
       decimal[4+3-:4] = 4'h0;
     end else begin
-      decimal[0+3-:4] = binary - 4'h9;
+      decimal[0+3-:4] = binary - 4'ha;
       decimal[4+3-:4] = 4'h1;
     end
   end

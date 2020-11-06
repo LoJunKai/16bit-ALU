@@ -4,7 +4,10 @@ module auto_test_output (
     output auto_X[16],
     output auto_Y[16],
     output alu_ans[16], // 16bit ans
-    output alufn_pass[6]
+    output alufn_pass[6],
+    output z,
+    output v,
+    output n
   ) {
 
   sig alufn[6];
@@ -81,14 +84,14 @@ module auto_test_output (
        
       10: // CMPLT
         alufn = 6b110101;
-        x = 16h0ff0;
-        y = 16h000f;
+        x = 16h000f;
+        y = 16h0ff0;
         auto_ans = 16h0001;
        
       11: // CMPLE
         alufn = 6b110111;
-        x = 16h0ff0;
-        y = 16h000f;
+        x = 16h000f;
+        y = 16h0ff0;
         auto_ans = 16h0001;
        
       12: // MUL
@@ -108,6 +111,12 @@ module auto_test_output (
         x = 16hfff0;
         y = 16h0fff;
         auto_ans = 16hfff0;
+        
+      15: // Invalid ALUFN
+        alufn = 6b0111111;
+        x = 16hfff0;
+        y = 16h0fff;
+        auto_ans = 16h0ff0;
 
       default:
         // Undefined case -> auto_pass_fail = fail;
@@ -123,6 +132,9 @@ module auto_test_output (
     
     // Outputs
     alu_ans = calculate.out;
+    z = calculate.z;
+    v = calculate.v;
+    n = calculate.n;
     auto_X = x;
     auto_Y = y;
     alufn_pass = alufn; // For invalidy checker
@@ -130,6 +142,7 @@ module auto_test_output (
     // Compare ALU output and model ans
     // not (output[16] ^ auto_ans) -> 0 only when they do not match
     // & all the bits from above -> 1 only when they all are 1 (all match)
+    // Prof Oka - just use ==
     nxor = ~(calculate.out ^ auto_ans);
     auto_pass_fail = &(nxor);
   }

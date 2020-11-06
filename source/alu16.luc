@@ -19,6 +19,7 @@ module alu16 (
   sig sh[16]; //result of shifter
   sig b[16]; // result of boolean unit
   sig z,v,n; // result of z,v,n to be passed to the compare unit
+  sig overflow[16];
   always {
     ytoystar.y = y[15:0]; //adder16 sum
     ytoystar.alufn0 = alufn[0];
@@ -67,10 +68,27 @@ module alu16 (
         o = 16b0;
       
     }
-    z_out = z;
-    n_out = n;
-    v_out = v;
+    
+    z_out = 0;
+    n_out = 0;
+    v_out = 0;
+    
+    if (alufn == 6b000000 || alufn == 6b000001) {
+        z_out = z;
+        n_out = n;
+        v_out = v;
+    }
+
     if (alufn == 6b000010) {
-      o = x*y;}
-  }  }
+      overflow[15:0] = x*y;
+      o = overflow;
+      
+      n_out = overflow[15];
+      
+      if(x[15] != overflow[15]) {
+        v_out = 1;
+      }
+    }
+  }
+}
 

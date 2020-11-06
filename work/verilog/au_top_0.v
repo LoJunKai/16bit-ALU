@@ -114,9 +114,12 @@ module au_top_0 (
         alufn = io_dip[16+0+5-:6];
         io_led[0+15-:16] = M_calculate_out;
         io_led[16+7-:8] = 8'h00;
+        io_led[16+0+0-:1] = M_calculate_z;
+        io_led[16+1+0-:1] = M_calculate_v;
+        io_led[16+2+0-:1] = M_calculate_n;
       end else begin
         M_storeX_d = io_dip[0+15-:16];
-        alufn = 6'h00;
+        alufn = 6'h11;
       end
     end
     M_alufn_validity_alufn = alufn;

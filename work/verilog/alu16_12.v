@@ -106,6 +106,8 @@ module alu16_12 (
   reg v;
   reg n;
   
+  reg [15:0] overflow;
+  
   always @* begin
     M_ytoystar_y = y[0+15-:16];
     M_ytoystar_alufn0 = alufn[0+0-:1];
@@ -153,11 +155,21 @@ module alu16_12 (
         o = 16'h0000;
       end
     endcase
-    z_out = z;
-    n_out = n;
-    v_out = v;
+    z_out = 1'h0;
+    n_out = 1'h0;
+    v_out = 1'h0;
+    if (alufn == 6'h00 || alufn == 6'h01) begin
+      z_out = z;
+      n_out = n;
+      v_out = v;
+    end
     if (alufn == 6'h02) begin
-      o = x * y;
+      overflow[0+15-:16] = x * y;
+      o = overflow;
+      n_out = overflow[15+0-:1];
+      if (x[15+0-:1] != overflow[15+0-:1]) begin
+        v_out = 1'h1;
+      end
     end
   end
 endmodule

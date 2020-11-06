@@ -16,8 +16,8 @@ module auto_tester (
   .clk(clk) {
     .rst(rst) {
       // ctr[5:2] -> cycle test cases, ctr[1] -> cycle input, output, ctr[0] -> if input, show X and Y
-      // 15 test cases -> max output is c(4b1110, 2b11) -> 6d59
-      counter ctr (#SIZE(6), #TOP(59), #DIV(27));
+      // 16 test cases -> max output is c(4b1111, 2b11) -> 6d63
+      counter ctr (#SIZE(6), #TOP(63), #DIV(26));
       
       // Show test cases number
       multi_seven_seg seg (#DIGITS(2));
@@ -48,10 +48,14 @@ module auto_tester (
       // Output
       led_bits = tester.alu_ans;
       pass_fail = tester.auto_pass_fail;
+      
+      // 1st led from the left -> pass
+      // 2nd led from the left -> fail
+      // 2 right arrays to show 16bits number
+      io_dip = $build(c{pass_fail, ~pass_fail, 3h00, tester.n, tester.v, tester.z, led_bits}, 3);
+      
     } else {
       // Input
-      pass_fail = 1b0; // Do not light up when showing inputs
-      
       // Split time for inputs into 2 for x and y
       if (ctr.value[0]) {
         // Show y
@@ -60,12 +64,10 @@ module auto_tester (
         // Show x
         led_bits = tester.auto_X;
       }
+      
+      // Show inputs only
+      io_dip = $build(c{8h00, led_bits}, 3);
     }
-    
-    // 1st led from the left -> pass
-    // 2nd led from the left -> fail
-    // 2 right arrays to show 16bits number
-    io_dip = $build(c{pass_fail, ~pass_fail, 6h00, led_bits}, 3);
     
   }
 }

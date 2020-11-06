@@ -9,9 +9,9 @@ module compare16 (
  
   always {
   case (c{alufn2,alufn1}) {
-      b01: cmp0 = z;
-      b10: cmp0 = (n^v); 
-      b11: cmp0 = z|(n^v);
+      2b01: cmp0 = z;
+      2b10: cmp0 = (n^v);
+      2b11: cmp0 = z|(n^v);
       default: cmp0 = 0;
   }
 }
