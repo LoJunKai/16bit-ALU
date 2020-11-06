@@ -29,3 +29,13 @@
 #### Case
 
 ![](https://github.com/LoJunKai/16bit-ALU/raw/main/media/Case.PNG)
+
+#### Credits
+
+- Russell
+
+- Darren
+
+- Le Xuan
+
+- Jun Kai
